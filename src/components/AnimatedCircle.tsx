@@ -1,0 +1,15 @@
+// AnimatedCircle.tsx
+'use client';
+const colors = ["#CDE2AE", "#EBC8DC", "#EBD78C"];
+
+export default function AnimatedCircle({ current }: { current: number }) {
+  return (
+    <div
+      className="absolute -top-60 right-[-1300px] w-[1500px] h-[1500px] rounded-full"
+      style={{
+        backgroundColor: colors[current],
+        transition: "background-color 1.2s ease",
+      }}
+    />
+  );
+}
