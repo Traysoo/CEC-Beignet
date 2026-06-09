@@ -39,7 +39,7 @@ export default function Navbar() {
         <nav className="hidden md:flex gap-8 absolute left-1/2 -translate-x-1/2">            
           <ButtonDyn label="Accueil" image="/LogoTextlessPink.png" onClick={() => scrollTo("accueil")} />
           <ButtonDyn label="Le Beignet" image="/LogoTextlessGreen.png" onClick={() => scrollTo("beignet")} />
-          <ButtonDyn label="L'alliance" image="/LogoTextlessBlue.png" onClick={() => scrollTo("alliance")} />
+          <ButtonDyn label="L'Alliance" image="/LogoTextlessBlue.png" onClick={() => scrollTo("alliance")} />
           <ButtonDyn label="Contact" image="/LogoTextlessYellow.png" onClick={() => scrollTo("contact")} />
         </nav>
 
