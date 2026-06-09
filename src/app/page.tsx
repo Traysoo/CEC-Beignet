@@ -323,7 +323,7 @@ export default function Home() {
 
           {/* Texte */}
           <p className="text-xl leading-relaxed mb-16 mt-12 max-w-3xl">
-            Retrouver de la puissance d’agir en cultivant un nouveau narratif
+            Retrouver de la puissance d’agir en cultivant un nouveau narratif.
           </p>
 
           <Formulaire />

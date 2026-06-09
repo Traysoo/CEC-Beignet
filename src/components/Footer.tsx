@@ -21,7 +21,7 @@ export default function Footer() {
 
         <p className="text-sm leading-relaxed text-black/70 max-w-xs">
           Rendre irrésistibles les nouveaux récits.
-          Une alliance créative engagée pour imaginer
+          Une alliance engagée pour imaginer
           les histoires du monde de demain.
         </p>
       </div>
@@ -85,7 +85,7 @@ export default function Footer() {
     <div className="mt-12 pt-8 border-t border-black/10 flex flex-col md:flex-row justify-between gap-4 text-sm text-black/50">
 
       <p>
-        © {new Date().getFullYear()} Le Beignet. Tous droits réservés.
+        © {new Date().getFullYear()}{" "} L&apos;Irrésistible Alliance Du Beignet. Tous droits réservés.
       </p>
 
       <div className="flex gap-6">
