@@ -40,76 +40,73 @@ export default function Home() {
       <Navbar />
 
       {/* Amorce */}
+      <section id="accueil" className="max-w-7xl mx-auto px-6 py-20 md:py-45">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-center">
 
-      <section id="accueil" className="max-w-7xl mx-auto px-6 py-45">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          
-          {/* Partie gauche */}
-          <div className="-ml-4">
-            <h1 className="text-5xl font-extrabold leading-snug mb-8">
+          {/* Image en premier dans le DOM → apparaît au-dessus sur mobile */}
+            <div className="relative flex justify-center md:justify-end md:order-2 w-[calc(100%+3rem)] -mx-6 md:mx-0 md:w-auto">        
+              <Image
+              src="/Field.png"
+              alt="Illustration"
+              width={800}
+              height={600}
+              className="w-full md:w-13/14 h-auto translate-y-0 md:translate-y-6"
+            />
+
+            {/* DonutPink : toujours absolu, repositionné selon l'écran */}
+            <Image
+              src="/DonutPink.png"
+              alt="Badge"
+              width={230}
+              height={180}
+              className="
+                absolute
+                w-[170px] md:w-[230px]
+                -bottom-14 -right-4
+                md:-bottom-30 md:-right-19
+              "
+            />
+          </div>
+
+          {/* Partie gauche → passe en dessous sur mobile */}
+          <div className="md:order-1 md:-ml-4 mt-8 md:mt-0">
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-snug mb-8">
               <span className="relative inline-block">
                 <span className="relative inline-block z-10">
                   Changer les histoires
                 </span>
-
                 <Image
                   src="/ComaPink.svg"
                   alt="Coma Pink"
                   width={298}
                   height={60}
-                  className="absolute bottom-0 left-47 z-0 "
+                  className="block absolute bottom-0 left-35 w-[230px] md:w-[298px] md:left-47 z-0"
                 />
               </span>
               <br />
               qu’on (se) raconte
             </h1>
 
-            <p className="text-xl font-medium text-black-600 leading-relaxed mb-8">
-                Rendre irrésistible les nouveaux récits est notre projet.
-              <br />  <br />
-              Le Donut est notre boussole. Dans un monde épuisé qui appelle à une transition apaisée, nous avons choisi de nous rassembler. En dépassant nos égocentrismes, en scellant une alliance existentialiste. 13 agences et experts créatifs engagés à la CEC (Convention des entreprises pour le Climat) oeuvrent désormais ensemble pour aligner et écrire votre histoire à la créativité régénérée. 
+            <p className="text-xl  font-medium text-black-600 leading-relaxed mb-8">
+              Rendre irrésistible les nouveaux récits est notre projet.
+              <br /><br />
+              Le Donut est notre boussole. Dans un monde épuisé qui appelle à une transition apaisée,
+              nous avons choisi de nous rassembler. En dépassant nos égocentrismes, en scellant une
+              alliance existentialiste. 13 agences et experts créatifs engagés à la CEC (Convention
+              des entreprises pour le Climat) oeuvrent désormais ensemble pour aligner et écrire
+              votre histoire à la créativité régénérée.
             </p>
 
-            <button className="
-              bg-white 
-              text-black 
-              px-6 
-              py-3 
-              border 
-              border-gray-200 
-              text-xl 
-              font-medium 
-              shadow-lg
-              hover:opacity-90
-              transition
-              duration-300
-              hover:bg-gray-200
-              disabled:opacity-50
-              cursor-pointer" 
-              onClick={() => scrollTo("contact")}>
-              Nous contacter
-            </button>
-          </div>
-
-
-
-          {/* Partie droite */}
-          <div className="relative flex justify-end">
-            <Image
-              src="/Field.png"
-              alt="Illustration"
-              width={800}
-              height={600}
-              className="w-13/14 h-auto translate-y-6"
-            />
-
-            <Image
-              src="/DonutPink.png"
-              alt="Badge"
-              width={230}
-              height={180}
-              className="absolute w-[230px] h-auto -bottom-30 -right-19"
-            />
+            <div className="flex md:block justify-center">
+              <button className="
+                bg-white text-black px-6 py-3
+                border border-gray-200 text-xl font-medium shadow-lg
+                hover:opacity-90 transition duration-300
+                hover:bg-gray-200 disabled:opacity-50 cursor-pointer"
+                onClick={() => scrollTo("contact")}>
+                Nous contacter
+              </button>
+            </div>
           </div>
 
         </div>
@@ -250,13 +247,13 @@ export default function Home() {
       </section>
 
       {/* Magazine */}
-      <div className="w-full">
+      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mt-[10vh] mb-[10vh] w-screen">
         <Image
-          src="/Magazine.png"
+          src="/Magasine.png"
           alt=""
           width={1920}
           height={600}
-          className="w-full h-auto object-cover"
+          className="w-full h-auto scale-125 md:scale-120"
         />
       </div>
 
