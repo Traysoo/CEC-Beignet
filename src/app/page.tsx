@@ -247,13 +247,13 @@ export default function Home() {
       </section>
 
       {/* Magazine */}
-      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mt-[10vh] mb-[10vh] w-screen">
+      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mt-[15vh] mb-[20vh] w-screen">
         <Image
           src="/Magasine.png"
           alt=""
           width={1920}
           height={600}
-          className="w-full h-auto scale-125 md:scale-120"
+          className="w-full h-auto scale-125 md:scale-137 md:ml-[4vw]"
         />
       </div>
 
