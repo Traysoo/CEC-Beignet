@@ -65,16 +65,8 @@ export default function Footer() {
 
         <div className="flex flex-col gap-4">
 
-          <a href="https://www.linkedin.com/company/convention-entreprises-climat/" target="_blank" rel="noreferrer">
+          <a href="https://www.linkedin.com/company/alliance-du-beignet/posts/?feedView=all" target="_blank" rel="noreferrer">
             <Image src="/Linkedin.png" alt="LinkedIn" width={24} height={24} className="hover:opacity-70 transition" />
-          </a>
-
-          <a href="https://www.instagram.com/cec_pacifique/" target="_blank" rel="noreferrer">
-            <Image src="/Instagram.png" alt="Instagram" width={24} height={24} className="hover:opacity-70 transition" />
-          </a>
-
-          <a href="https://www.youtube.com/channel/UCgqOJdUjJLrGn9XCKBP253A" target="_blank" rel="noreferrer">
-            <Image src="/Youtube.png" alt="YouTube" width={24} height={24} className="hover:opacity-70 transition" />
           </a>
 
         </div>
@@ -85,7 +77,7 @@ export default function Footer() {
     <div className="mt-12 pt-8 border-t border-black/10 flex flex-col md:flex-row justify-between gap-4 text-sm text-black/50">
 
       <p>
-        © {new Date().getFullYear()}{" "} L&apos;Irrésistible Alliance Du Beignet. Tous droits réservés.
+        © {new Date().getFullYear()} L’Irrésistible Alliance Du Beignet. Tous droits réservés.
       </p>
 
       <div className="flex gap-6">

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 
 // ← Remplace les src et href par tes vraies images et liens
 const items = [
@@ -10,13 +10,13 @@ const items = [
   { src: "/Lajolieprod.png",  href: "https://lajolieprod.com/" },
   { src: "/OorZone.png",  href: "https://oorzone.fr/" },
   { src: "/Shortlinks.png",  href: "https://shortlinks.fr/" },
-  { src: "/goodrush.png",  href: "https://annuaire-entreprises.data.gouv.fr/entreprise/good-rush-842535577" },
+  { src: "/goodrush.png",  href: "null" },
   { src: "/Uka.png",  href: "https://www.uka-partner.com/" },
   { src: "/Mooxy.png",  href: "https://mooxy.co/" },
   { src: "/MarsAtWork.png",  href: "https://marsatwork.fr/" },
   { src: "/Enov.png", href: "https://enov.fr/" },
   { src: "/Looksharp.png", href: "https://looksharp.fr/language/en/home/" },
-  { src: "/NikiTa.png", href: "https://www.nikita.fr/" },
+  { src: "/NiKiTa.png", href: "https://www.nikita.fr/" },
 ];
 
 const CIRCLE_SIZE = 680;   // diamètre du cercle blanc (px)
@@ -64,7 +64,38 @@ export default function RotatingCircle() {
           const x = CIRCLE_SIZE / 2 + ORBIT_RADIUS * Math.cos(rad) - BUTTON_SIZE / 2;
           const y = CIRCLE_SIZE / 2 + ORBIT_RADIUS * Math.sin(rad) - BUTTON_SIZE / 2;
  
-          return (
+          const isDisabled = item.href === "null";
+
+          const sharedStyle: React.CSSProperties = {
+            position: "absolute",
+            left: x,
+            top: y,
+            width: BUTTON_SIZE,
+            height: BUTTON_SIZE,
+            animation: `counter-spin ${DURATION}s linear infinite`,
+            animationPlayState: paused ? "paused" : "running",
+          };
+
+          const sharedClass =
+            "flex items-center justify-center rounded-full bg-white transition-transform duration-200 overflow-hidden";
+
+          const inner = (
+            <div style={{ position: "relative", width: BUTTON_SIZE - 16, height: BUTTON_SIZE - 16 }}>
+              <Image src={item.src} alt="" fill className="object-contain" />
+            </div>
+          );
+          
+           return isDisabled ? (
+            <span
+              key={i}
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              style={sharedStyle}
+              className={`${sharedClass} cursor-default`}
+            >
+              {inner}
+            </span>
+          ) : (
             <a
               key={i}
               href={item.href}
@@ -72,26 +103,10 @@ export default function RotatingCircle() {
               rel="noreferrer"
               onMouseEnter={() => setPaused(true)}
               onMouseLeave={() => setPaused(false)}
-              style={{
-                position: "absolute",
-                left: x,
-                top: y,
-                width: BUTTON_SIZE,
-                height: BUTTON_SIZE,
-                // Counter-rotation pour garder les images droites
-                animation: `counter-spin ${DURATION}s linear infinite`,
-                animationPlayState: paused ? "paused" : "running",
-              }}
-              className="flex items-center justify-center rounded-full bg-white hover:scale-110 transition-transform duration-200 overflow-hidden"
+              style={sharedStyle}
+              className={`${sharedClass} hover:scale-110`}
             >
-              <div style={{ position: "relative", width: BUTTON_SIZE - 16, height: BUTTON_SIZE - 16 }}>
-                <Image
-                  src={item.src}
-                  alt=""
-                  fill
-                  className="object-contain"
-                />
-              </div>
+              {inner}
             </a>
           );
         })}
