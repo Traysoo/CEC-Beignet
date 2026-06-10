@@ -159,7 +159,7 @@ export default function Home() {
               La théorie économique du Donut de K. Raworth offre un cadre culturel pour inventer les récits du monde de demain.
               <br />  <br />
 
-              Notre approche permet de  traduire des enjeux systémiques en récits sensibles et d’en mesurer l’impact environnemental et social, pour contribuer à nourrir un espace juste et équitable pour l’humanité.
+              Notre approche permet de traduire des enjeux systémiques en récits sensibles et d’en mesurer l’impact environnemental et social, pour contribuer à nourrir un espace juste et équitable pour l’humanité.
             </p>
           </div>
 
