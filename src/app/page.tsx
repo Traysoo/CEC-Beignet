@@ -61,7 +61,7 @@ export default function Home() {
               height={180}
               className="
                 absolute
-                w-[170px] md:w-[230px]
+                w-[140px] md:w-[230px]
                 -bottom-14 -right-4
                 md:-bottom-30 md:-right-19
               "
@@ -70,7 +70,7 @@ export default function Home() {
 
           {/* Partie gauche → passe en dessous sur mobile */}
           <div className="md:order-1 md:-ml-4 mt-8 md:mt-0">
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-snug mb-8">
+            <h1 className="text-3xl md:text-5xl font-extrabold leading-snug mb-8">
               <span className="relative inline-block">
                 <span className="relative inline-block z-10">
                   Changer les histoires
@@ -80,14 +80,14 @@ export default function Home() {
                   alt="Coma Pink"
                   width={298}
                   height={60}
-                  className="block absolute bottom-0 left-35 w-[230px] md:w-[298px] md:left-47 z-0"
+                  className="absolute bottom-0 left-30 md:left-47 w-[180px] md:w-[298px] z-0"
                 />
               </span>
               <br />
               qu’on (se) raconte
             </h1>
 
-            <p className="text-xl  font-medium text-black-600 leading-relaxed mb-8">
+            <p className="text-sm  md:text-xl  font-medium text-black-600 leading-relaxed mb-8">
               Rendre irrésistible les nouveaux récits est notre projet.
               <br /><br />
               Le Donut est notre boussole. Dans un monde épuisé qui appelle à une transition apaisée,
@@ -100,9 +100,10 @@ export default function Home() {
             <div className="flex md:block justify-center">
               <button className="
                 bg-white text-black px-6 py-3
-                border border-gray-200 text-xl font-medium shadow-lg
+                border border-gray-200 md:text-xl text-base font-medium shadow-lg
                 hover:opacity-90 transition duration-300
-                hover:bg-gray-200 disabled:opacity-50 cursor-pointer"
+                hover:bg-gray-200 disabled:opacity-50 cursor-pointer
+                "
                 onClick={() => scrollTo("contact")}>
                 Nous contacter
               </button>
@@ -116,118 +117,143 @@ export default function Home() {
 
       <section id="beignet" className="max-w-7xl mx-auto px-6 py-1 -mt-10 scroll-mt-10">
 
-        
-        <div className="relative">
-          
-          {/* Image */}
+        {/* Mobile : flex colonne / Desktop : relative pour l'absolu */}
+        <div className="flex flex-col md:relative">
+
+          {/* Image mobile */}
+          <div className="w-[calc(100%+3rem)] mt-3 mb-1 -ml-6 flex justify-center md:hidden">
+            <Image
+              src="/KateRaworthMobile.png"
+              alt=""
+              width={1700}
+              height={1700}
+              className="w-14/15 h-auto"
+            />
+          </div>
+
+          {/* Image desktop */}
           <Image
-            src="/Kate.png"
+            src="/KateRaworth.png"
             alt=""
-            width={900}
-            height={600}
-            className="w-[83%] h-auto"
+            width={1700}
+            height={1700}
+            className="w-[83%] h-auto hidden md:block"
           />
 
+          {/* DonutBrown : repositionné sur mobile */}
+          <div className="relative md:absolute -left-12.5 md:-left-35 bottom-25 md:-bottom-10">
+            <Image
+              src="/DonutBrown.png"
+              alt=""
+              width={600}
+              height={600}
+              className="w-40 md:w-82.5 h-auto md:z-10"
+            />
+          </div>
 
-          {/* Bloc texte */}
-          <div className="absolute top-20 right-0 w-[35%]">
-            <h2 className="text-5xl font-extrabold leading-snug mb-6">
+          {/* Bloc texte : dans le flux sur mobile, absolu sur desktop */}
+          <div className="-mt-18 md:mt-0 md:absolute md:top-20 md:right-0 md:w-[35%]">
+            <h2 className="text-3xl md:text-5xl font-extrabold leading-snug mb-6">
               <span className="relative inline-block">
-
                 Nouvelle boussole
                 <br />
-
                 <span className="relative inline-block z-10">
-                  narrative        
+                  narrative
                 </span>
-
                 <Image
                   src="/ComaGreen.svg"
                   alt="Coma Green"
                   width={300}
                   height={80}
-                  className="absolute -left-12 -bottom-1 z-0"
+                  className="absolute md:-left-12 -left-3 md:-bottom-1 bottom-0 w-[160px] md:w-[300px] z-0"
                 />
               </span>
-
             </h2>
 
-            <p className="text-xl leading-relaxed">
+            <p className="text-sm md:text-xl leading-relaxed">
               La théorie économique du Donut de K. Raworth offre un cadre culturel pour inventer les récits du monde de demain.
-              <br />  <br />
-
+              <br /><br />
               Notre approche permet de traduire des enjeux systémiques en récits sensibles et d’en mesurer l’impact environnemental et social, pour contribuer à nourrir un espace juste et équitable pour l’humanité.
             </p>
           </div>
 
         </div>
 
-          <Image
-          src="/DonutBrown.png"
-          alt=""
-          width={280}
-          height={350}
-          className="absolute -left-3 -bottom-210 z-10"
-        />
-
-
       </section>
 
 
       {/* Alliance */}
 
-      <section id="alliance" className="relative py-30 -mt-5 overflow-hidden">
+      <section id="alliance" className="relative py-20 md:py-30 -mt-5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
 
-          {/* Ligne du haut */}
-          <div className="grid grid-cols-[74%_26%] items-start">
-
+          {/* Desktop : grille 2 colonnes / Mobile : flex colonne */}
+          <div className="flex flex-col md:grid md:grid-cols-[74%_26%] items-start">
+          
             {/* Colonne gauche */}
             <div>
-              <h2 className="text-5xl font-extrabold mb-8">
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-8">
                 <span className="relative inline-block">
                   <span className="relative inline-block z-10">
                     L’alliance des designers de désirs durables
                   </span>
-
                   <Image
                     src="/ComaBlue.svg"
                     alt="Coma Pink"
                     width={322}
                     height={60}
-                    className="absolute -bottom-3 left-145 z-0"
+                    className="absolute -bottom-1 md:-bottom-3 left-11 md:left-145 w-[60%] md:w-[36%] z-0"
                   />
                 </span>
-
               </h2>
 
-              <p className="text-xl leading-relaxed mb-12 mt-14">
-                Nous étions des créateurs de désirs consuméristes, nous sommes devenus des designers de désirs durables. 
-                <br />  <br />
+              {/* RotatingCircle version mobile — centré, en dessous */}
+              <div className="flex justify-center mb-10 mt-5 md:hidden">
+                <RotatingCircle mobile/>
+
+                <Link href="https://cec-impact.org/" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="/CEC.png"
+                    alt=""
+                    width={120}
+                    height={280}
+                    className="absolute w-20 md:w-[120px] top-115 md:top-95 right-70 md:right-[130px]z-10 transition-transform duration-300 hover:scale-110"
+                  />
+                </Link>
+              </div>
+
+              <p className="text-sm md:text-xl leading-relaxed mb-12 mt-8 md:mt-14">
+                Nous étions des créateurs de désirs consuméristes, nous sommes devenus des designers de désirs durables.
+                <br /><br />
                 13 agences et organisations expertes se sont alliées à la CEC pour bâtir en intelligence collective une Alliance fertile au service des marques et des organisations.
               </p>
 
-              {/* Image sous le texte */}
+              {/* Image desktop */}
               <Image
                 src="/Recit.png"
                 alt=""
                 width={900}
                 height={500}
-                className="w-full h-auto"
+                className="w-full h-auto hidden md:block"
+              />
+
+              {/* Image mobile */}
+              <Image
+                src="/RecitMobile.png"
+                alt=""
+                width={900}
+                height={600}
+                className="w-full h-auto block md:hidden"
               />
             </div>
 
-            {/* Colonne droite */}
-            <div className="relative min-h-[500px]">
-
+            {/* Colonne droite — cachée sur mobile, visible sur desktop */}
+            <div className="hidden md:block relative min-h-[500px]">
               <div className="absolute -top-25 right-[-120px] z-10">
                 <div className="translate-x-1/2">
                   <RotatingCircle />
                 </div>
               </div>
-
-
-              
 
               <Link href="https://cec-impact.org/" target="_blank" rel="noopener noreferrer">
                 <Image
@@ -238,7 +264,6 @@ export default function Home() {
                   className="absolute top-95 right-[130px] z-10 transition-transform duration-300 hover:scale-110"
                 />
               </Link>
-
             </div>
 
           </div>
@@ -247,13 +272,13 @@ export default function Home() {
       </section>
 
       {/* Magazine */}
-      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mt-[15vh] mb-[20vh] w-screen">
+      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mt-[3vh] md:mt-[15vh] mb-[5vh] md:mb-[20vh] w-screen">
         <Image
           src="/Magasine.png"
           alt=""
           width={1920}
           height={600}
-          className="w-full h-auto scale-125 md:scale-137 md:ml-[4vw]"
+          className="w-full h-auto scale-160 md:scale-137 md:ml-[4vw]"
         />
       </div>
 
@@ -266,7 +291,7 @@ export default function Home() {
 
           <AnimatedImage current={current}/>
 
-          <p className="text-xl leading-relaxed mb-12 ">
+          <p className="text-sm md:text-xl leading-relaxed mb-12 ">
             Nouveaux imaginaires, nouvelles représentations, nouveaux sensibles… <br /> 
             chaque histoire se révèle dans un monde qui s’élève.          
           </p>
@@ -288,7 +313,12 @@ export default function Home() {
           alt=""
           width={270}
           height={270}
-          className="absolute top-100 right-[5px] z-20"
+          className="absolute 
+          md: right-[5px] md: top-100 
+          w-[120px] 
+          md:w-[270px]
+          mt-58 mr-4
+          z-20"
         />
 
         <AnimatedCircle current={current}/>
@@ -302,7 +332,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Titre */}
-          <h2 className="text-5xl font-extrabold mb-8">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-8">
             <span className="relative inline-block">
                   <span className="relative inline-block z-10">
                     Nous contacter
@@ -313,13 +343,13 @@ export default function Home() {
                     alt="Coma Pink"
                     width={300}
                     height={60}
-                    className="absolute -bottom-2 left-20 z-0"
+                    className="md:w-60 w-48 absolute md:-bottom-2 bottom-0 md:left-20 left-9 z-0"
                   />
                 </span>
           </h2>
 
           {/* Texte */}
-          <p className="text-xl leading-relaxed mb-16 mt-12 max-w-3xl">
+          <p className="text-sm md:text-xl leading-relaxed md:mb-16 mb-16 md:mt-12 mt-10 max-w-3xl">
             Retrouver de la puissance d’agir en cultivant un nouveau narratif.
           </p>
 
@@ -339,6 +369,8 @@ export default function Home() {
             h-[1300px]
             rounded-full
             bg-[#EBC8DC]
+            md:block
+            hidden
           "
         />
         

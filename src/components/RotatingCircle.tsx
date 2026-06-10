@@ -19,60 +19,69 @@ const items = [
   { src: "/NiKiTa.png", href: "https://www.nikita.fr/" },
 ];
 
-const CIRCLE_SIZE = 680;   // diamètre du cercle blanc (px)
-const ORBIT_RADIUS = 250;  // distance du centre aux boutons (px)
-const BUTTON_SIZE = 135;    // taille de chaque bouton image (px)
-const DURATION = 20;       // durée d'un tour complet (secondes)
+const CONFIGS = {
+  desktop: {
+    circleSize: 680,
+    orbitRadius: 250,
+    buttonSize: 135,
+    duration: 20,
+  },
+  mobile: {
+    circleSize: 340,
+    orbitRadius: 125,
+    buttonSize: 68,
+    duration: 20,
+  },
+};
 
-export default function RotatingCircle() {
+export default function RotatingCircle({ mobile = false }: { mobile?: boolean }) {
   const [paused, setPaused] = useState(false);
+  const { circleSize, orbitRadius, buttonSize } = mobile ? CONFIGS.mobile : CONFIGS.desktop;
 
   return (
     <div
       className="relative flex items-center justify-center"
-      style={{ width: CIRCLE_SIZE, height: CIRCLE_SIZE }}
+      style={{ width: circleSize, height: circleSize }}
     >
       {/* Cercle blanc */}
-      <div
-        className="absolute inset-0 rounded-full bg-white"
-      />
+      <div className="absolute inset-0 rounded-full bg-white" />
 
       {/* Image centrale */}
       <div className="absolute z-10 flex items-center justify-center">
         <Image
-          src="/CircleCentre.png" // ← remplace par ton image
+          src="/CircleCentre.png"
           alt=""
-          width={330}
-          height={330}
+          width={mobile ? 165 : 330}
+          height={mobile ? 165 : 330}
           className="object-contain"
         />
       </div>
 
-            {/* Anneau rotatif */}
+      {/* Anneau rotatif */}
       <div
         style={{
           position: "absolute",
-          width: CIRCLE_SIZE,
-          height: CIRCLE_SIZE,
-          animation: `spin ${DURATION}s linear infinite`,
+          width: circleSize,
+          height: circleSize,
+          animation: `spin ${CONFIGS.desktop.duration}s linear infinite`,
           animationPlayState: paused ? "paused" : "running",
         }}
       >
         {items.map((item, i) => {
           const angle = (i / items.length) * 360;
           const rad = (angle * Math.PI) / 180;
-          const x = CIRCLE_SIZE / 2 + ORBIT_RADIUS * Math.cos(rad) - BUTTON_SIZE / 2;
-          const y = CIRCLE_SIZE / 2 + ORBIT_RADIUS * Math.sin(rad) - BUTTON_SIZE / 2;
- 
+          const x = circleSize / 2 + orbitRadius * Math.cos(rad) - buttonSize / 2;
+          const y = circleSize / 2 + orbitRadius * Math.sin(rad) - buttonSize / 2;
+
           const isDisabled = item.href === "null";
 
           const sharedStyle: React.CSSProperties = {
             position: "absolute",
             left: x,
             top: y,
-            width: BUTTON_SIZE,
-            height: BUTTON_SIZE,
-            animation: `counter-spin ${DURATION}s linear infinite`,
+            width: buttonSize,
+            height: buttonSize,
+            animation: `counter-spin ${CONFIGS.desktop.duration}s linear infinite`,
             animationPlayState: paused ? "paused" : "running",
           };
 
@@ -80,38 +89,23 @@ export default function RotatingCircle() {
             "flex items-center justify-center rounded-full bg-white transition-transform duration-200 overflow-hidden";
 
           const inner = (
-            <div style={{ position: "relative", width: BUTTON_SIZE - 16, height: BUTTON_SIZE - 16 }}>
+            <div style={{ position: "relative", width: buttonSize - 16, height: buttonSize - 16 }}>
               <Image src={item.src} alt="" fill className="object-contain" />
             </div>
           );
-          
-           return isDisabled ? (
-            <span
-              key={i}
-              onMouseEnter={() => setPaused(true)}
-              onMouseLeave={() => setPaused(false)}
-              style={sharedStyle}
-              className={`${sharedClass} cursor-default`}
-            >
+
+          return isDisabled ? (
+            <span key={i} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} style={sharedStyle} className={`${sharedClass} cursor-default`}>
               {inner}
             </span>
           ) : (
-            <a
-              key={i}
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              onMouseEnter={() => setPaused(true)}
-              onMouseLeave={() => setPaused(false)}
-              style={sharedStyle}
-              className={`${sharedClass} hover:scale-110`}
-            >
+            <a key={i} href={item.href} target="_blank" rel="noreferrer" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} style={sharedStyle} className={`${sharedClass} hover:scale-110`}>
               {inner}
             </a>
           );
         })}
       </div>
- 
+
       <style>{`
         @keyframes spin {
           from { transform: rotate(0deg); }
