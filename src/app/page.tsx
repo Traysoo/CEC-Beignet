@@ -314,10 +314,9 @@ export default function Home() {
           width={270}
           height={270}
           className="absolute 
-          md: right-[5px] md: top-100 
-          w-[120px] 
-          md:w-[270px]
-          mt-58 mr-4
+          md:top-100 md:right-[5px] 
+          w-[120px] md:w-[270px]
+          mt-5 ml-62    
           z-20"
         />
 
