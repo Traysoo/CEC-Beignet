@@ -208,7 +208,7 @@ export default function Home() {
               </h2>
 
               {/* RotatingCircle version mobile — centré, en dessous */}
-              <div className="flex justify-center mb-10 mt-5 md:hidden">
+              <div className="relative w-full overflow-hidden mb-10 mt-5 md:hidden">
                 <RotatingCircle mobile/>
 
                 <Link href="https://cec-impact.org/" target="_blank" rel="noopener noreferrer">
@@ -217,7 +217,7 @@ export default function Home() {
                     alt=""
                     width={120}
                     height={280}
-                    className="absolute w-20 md:w-[120px] top-115 md:top-95 right-70 md:right-[130px]z-10 transition-transform duration-300 hover:scale-110"
+                    className="absolute w-[18%] bottom-[1%] left-[6%] z-10 transition-transform duration-300 hover:scale-110"
                   />
                 </Link>
               </div>
