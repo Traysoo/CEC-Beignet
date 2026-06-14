@@ -1,42 +1,67 @@
 'use client';
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-// ← Remplace les src et href par tes vraies images et liens
 const items = [
-  { src: "/Mieux.png",  href: "https://mieux.com/" },
-  { src: "/Pixelis.png",  href: "https://www.pixelis.com/" },
-  { src: "/Lajolieprod.png",  href: "https://lajolieprod.com/" },
-  { src: "/OorZone.png",  href: "https://oorzone.fr/" },
+  { src: "/Mieux.png",       href: "https://mieux.com/" },
+  { src: "/Pixelis.png",     href: "https://www.pixelis.com/" },
+  { src: "/Lajolieprod.png", href: "https://lajolieprod.com/" },
+  { src: "/OorZone.png",     href: "https://oorzone.fr/" },
   { src: "/Shortlinks.png",  href: "https://shortlinks.fr/" },
-  { src: "/goodrush.png",  href: "null" },
-  { src: "/Uka.png",  href: "https://www.uka-partner.com/" },
-  { src: "/Mooxy.png",  href: "https://mooxy.co/" },
+  { src: "/goodrush.png",    href: "null" },
+  { src: "/Uka.png",         href: "https://www.uka-partner.com/" },
+  { src: "/Mooxy.png",       href: "https://mooxy.co/" },
   { src: "/MarsAtWork.png",  href: "https://marsatwork.fr/" },
-  { src: "/Enov.png", href: "https://enov.fr/" },
-  { src: "/Looksharp.png", href: "https://looksharp.fr/language/en/home/" },
-  { src: "/NiKiTa.png", href: "https://www.nikita.fr/" },
+  { src: "/Enov.png",        href: "https://enov.fr/" },
+  { src: "/Looksharp.png",   href: "https://looksharp.fr/language/en/home/" },
+  { src: "/NiKiTa.png",      href: "https://www.nikita.fr/" },
 ];
 
-const CONFIGS = {
-  desktop: {
-    circleSize: 680,
-    orbitRadius: 250,
-    buttonSize: 135,
-    duration: 20,
-  },
-  mobile: {
-    circleSize: 340,
-    orbitRadius: 125,
-    buttonSize: 68,
-    duration: 20,
-  },
+const DESKTOP = {
+  circleSize: 680,
+  orbitRadius: 250,
+  buttonSize: 135,
+  duration: 20,
 };
+
+const MOBILE_RATIO = {
+  // le cercle prend 85% de la largeur de l'écran, avec un max de 340px
+  circleRatio: 0.85,
+  maxCircle: 340,
+};
+
+function getMobileConfig(screenWidth: number) {
+  const circleSize = Math.min(screenWidth * MOBILE_RATIO.circleRatio, MOBILE_RATIO.maxCircle);
+  const scale = circleSize / 340; // 340 est notre référence mobile de base
+  return {
+    circleSize,
+    orbitRadius: Math.round(125 * scale),
+    buttonSize: Math.round(68 * scale),
+    duration: 20,
+  };
+}
 
 export default function RotatingCircle({ mobile = false }: { mobile?: boolean }) {
   const [paused, setPaused] = useState(false);
-  const { circleSize, orbitRadius, buttonSize } = mobile ? CONFIGS.mobile : CONFIGS.desktop;
+
+  // Config dynamique pour mobile, statique pour desktop
+  const [config, setConfig] = useState(
+    mobile ? getMobileConfig(340) : DESKTOP
+  );
+
+  useEffect(() => {
+    if (!mobile) return;
+
+    const update = () => setConfig(getMobileConfig(window.innerWidth));
+    update(); // appel immédiat au montage
+
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, [mobile]);
+
+  const { circleSize, orbitRadius, buttonSize } = config;
+  const centerImageSize = mobile ? Math.round(165 * (circleSize / 340)) : 330;
 
   return (
     <div
@@ -51,8 +76,8 @@ export default function RotatingCircle({ mobile = false }: { mobile?: boolean })
         <Image
           src="/CircleCentre.png"
           alt=""
-          width={mobile ? 165 : 330}
-          height={mobile ? 165 : 330}
+          width={centerImageSize}
+          height={centerImageSize}
           className="object-contain"
         />
       </div>
@@ -63,7 +88,7 @@ export default function RotatingCircle({ mobile = false }: { mobile?: boolean })
           position: "absolute",
           width: circleSize,
           height: circleSize,
-          animation: `spin ${CONFIGS.desktop.duration}s linear infinite`,
+          animation: `spin ${DESKTOP.duration}s linear infinite`,
           animationPlayState: paused ? "paused" : "running",
         }}
       >
@@ -81,7 +106,7 @@ export default function RotatingCircle({ mobile = false }: { mobile?: boolean })
             top: y,
             width: buttonSize,
             height: buttonSize,
-            animation: `counter-spin ${CONFIGS.desktop.duration}s linear infinite`,
+            animation: `counter-spin ${DESKTOP.duration}s linear infinite`,
             animationPlayState: paused ? "paused" : "running",
           };
 
@@ -95,11 +120,26 @@ export default function RotatingCircle({ mobile = false }: { mobile?: boolean })
           );
 
           return isDisabled ? (
-            <span key={i} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} style={sharedStyle} className={`${sharedClass} cursor-default`}>
+            <span
+              key={i}
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              style={sharedStyle}
+              className={`${sharedClass} cursor-default`}
+            >
               {inner}
             </span>
           ) : (
-            <a key={i} href={item.href} target="_blank" rel="noreferrer" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} style={sharedStyle} className={`${sharedClass} hover:scale-110`}>
+            <a
+              key={i}
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              style={sharedStyle}
+              className={`${sharedClass} hover:scale-110`}
+            >
               {inner}
             </a>
           );
