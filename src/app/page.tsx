@@ -205,7 +205,7 @@ export default function Home() {
                     alt="Coma Pink"
                     width={322}
                     height={60}
-                    className="absolute bottom-0 md:bottom-1 left-3 md:left-143 w-[65%] md:w-[37%] z-0"
+                    className="absolute bottom-0 md:bottom-1 left-8 md:left-143 w-[61%] md:w-[37%] z-0"
                   />
                 </span>
               </h2>
