@@ -16,7 +16,3 @@ body {
   color: var(--foreground);
   line-height: 1.6;
 }
-
-html, body {
-  overflow-x: hidden;
-}

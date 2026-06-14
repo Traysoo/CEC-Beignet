@@ -37,7 +37,7 @@ export default function Home() {
   
 
   return (
-    <main className="min-h-screen bg-[#f4e7dd]">
+    <main className="min-h-screen bg-[#f4e7dd] overflow-x-clip">
       {/* Navbar */}
       <Navbar />
 
@@ -186,7 +186,7 @@ export default function Home() {
 
       {/* Alliance */}
 
-      <section id="alliance" className="relative py-20 md:py-30 -mt-5 overflow-hidden">
+      <section id="alliance" className="relative py-20 md:py-30 -mt-5">
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Desktop : grille 2 colonnes / Mobile : flex colonne */}
@@ -194,17 +194,18 @@ export default function Home() {
           
             {/* Colonne gauche */}
             <div>
-              <h2 className="text-3xl md:text-5xl font-extrabold mb-8">
+              <h2 className="text-3xl md:text-5xl font-extrabold leading-snug mb-8">
                 <span className="relative inline-block">
+                  L’alliance de designers de {" "}
                   <span className="relative inline-block z-10">
-                    L’alliance des designers de désirs durables
+                    désirs durables
                   </span>
                   <Image
                     src="/ComaBlue.svg"
                     alt="Coma Pink"
                     width={322}
                     height={60}
-                    className="absolute -bottom-1 md:-bottom-3 left-11 md:left-145 w-[60%] md:w-[36%] z-0"
+                    className="absolute bottom-0 md:bottom-1 left-15 md:left-143 w-[60%] md:w-[37%] z-0"
                   />
                 </span>
               </h2>
@@ -275,7 +276,7 @@ export default function Home() {
       </section>
 
       {/* Magazine */}
-      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mt-[3vh] md:mt-[15vh] mb-[5vh] md:mb-[20vh] w-screen">
+      <div className="mt-[3vh] md:mt-[15vh] mb-[5vh] md:mb-[20vh]">
         <Image
           src="/Magasine.png"
           alt=""
@@ -287,7 +288,7 @@ export default function Home() {
 
       {/* Innover */}
 
-      <section className="relative py-40 overflow-hidden">
+      <section className="relative py-40">
 
         {/* Contenu centré */}
         <div className="max-w-4xl mx-auto px-6 text-center">
