@@ -91,7 +91,7 @@ export default function Formulaire() {
                         rounded-[10px]
                         px-6
                         md:text-lg
-                        text-sm
+                        text-base
                         bg-white
                         shadow-md
                         outline-none
@@ -111,7 +111,7 @@ export default function Formulaire() {
                             h-14
                             rounded-[10px]
                             px-6
-                            text-sm md:text-lg
+                            text-base md:text-lg
                             bg-white
                             shadow-md
                             outline-none
@@ -127,7 +127,7 @@ export default function Formulaire() {
                             h-14
                             rounded-[10px]
                             px-6
-                            text-sm md:text-lg
+                            text-base md:text-lg
                             bg-white
                             shadow-md
                             outline-none
@@ -144,7 +144,7 @@ export default function Formulaire() {
                             h-14
                             rounded-[10px]
                             px-6
-                            text-sm md:text-lg
+                            text-base md:text-lg
                             bg-white
                             shadow-md
                             outline-none
@@ -163,7 +163,7 @@ export default function Formulaire() {
                         rounded-[10px]
                         p-6
                         md:text-lg
-                        text-sm
+                        text-base
                         bg-white
                         shadow-md
                         outline-none

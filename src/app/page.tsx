@@ -89,7 +89,7 @@ export default function Home() {
               qu’on (se) raconte
             </h1>
 
-            <p className="text-sm  md:text-xl  font-medium text-black-600 leading-relaxed mb-8">
+            <p className="text-base  md:text-xl  font-medium text-black-600 leading-relaxed mb-8">
               Rendre irrésistible les nouveaux récits est notre projet.
               <br /><br />
               Le Donut est notre boussole. Dans un monde épuisé qui appelle à une transition apaisée,
@@ -172,7 +172,7 @@ export default function Home() {
               </span>
             </h2>
 
-            <p className="text-sm md:text-xl leading-relaxed">
+            <p className="text-base md:text-xl leading-relaxed">
               La théorie économique du Donut de K. Raworth offre un cadre culturel pour inventer les récits du monde de demain.
               <br /><br />
               Notre approche permet de traduire des enjeux systémiques en récits sensibles et d’en mesurer l’impact environnemental et social, pour contribuer à nourrir un espace juste et équitable pour l’humanité.
@@ -226,7 +226,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <p className="text-sm md:text-xl leading-relaxed mb-12 mt-8 md:mt-14">
+              <p className="text-base md:text-xl leading-relaxed mb-12 mt-8 md:mt-14">
                 Nous étions des créateurs de désirs consuméristes, nous sommes devenus des designers de désirs durables.
                 <br /><br />
                 13 agences et organisations expertes se sont alliées à la CEC pour bâtir en intelligence collective une Alliance fertile au service des marques et des organisations.
@@ -295,7 +295,7 @@ export default function Home() {
 
           <AnimatedImage current={current}/>
 
-          <p className="text-sm md:text-xl leading-relaxed mb-12">
+          <p className="text-base md:text-xl leading-relaxed mb-12">
             Nouveaux imaginaires, nouvelles représentations, nouveaux sensibles… <br /> 
             chaque histoire se révèle dans un monde qui s’élève.          
           </p>
@@ -376,7 +376,7 @@ export default function Home() {
           </h2>
 
           {/* Texte */}
-          <p className="text-sm md:text-xl leading-relaxed md:mb-16 mb-16 md:mt-12 mt-10 max-w-3xl">
+          <p className="text-base md:text-xl leading-relaxed md:mb-16 mb-16 md:mt-12 mt-10 max-w-3xl">
             Retrouver de la puissance d’agir en cultivant un nouveau narratif.
           </p>
 
