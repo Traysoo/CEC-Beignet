@@ -28,7 +28,7 @@ const DESKTOP = {
 const MOBILE_RATIO = {
   // le cercle prend 85% de la largeur de l'écran, avec un max de 340px
   circleRatio: 0.85,
-  maxCircle: 340,
+  maxCircle: 315,
 };
 
 function getMobileConfig(screenWidth: number) {
