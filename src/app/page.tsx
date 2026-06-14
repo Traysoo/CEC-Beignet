@@ -196,7 +196,7 @@ export default function Home() {
             <div>
               <h2 className="text-3xl md:text-5xl font-extrabold leading-snug mb-8">
                 <span className="relative inline-block">
-                  L’alliance de designers de {" "}
+                  L’alliance des designers de {" "}
                   <span className="relative inline-block z-10">
                     désirs durables
                   </span>
@@ -205,7 +205,7 @@ export default function Home() {
                     alt="Coma Pink"
                     width={322}
                     height={60}
-                    className="absolute bottom-0 md:bottom-1 left-15 md:left-143 w-[60%] md:w-[37%] z-0"
+                    className="absolute bottom-0 md:bottom-1 left-3 md:left-143 w-[65%] md:w-[37%] z-0"
                   />
                 </span>
               </h2>
