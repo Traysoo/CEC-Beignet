@@ -90,7 +90,8 @@ export default function Formulaire() {
                         h-14
                         rounded-[10px]
                         px-6
-                        text-lg
+                        md:text-lg
+                        text-sm
                         bg-white
                         shadow-md
                         outline-none
@@ -99,17 +100,18 @@ export default function Formulaire() {
                     />
 
                     {/* Ligne 3 colonnes */}
-                    <div className="grid md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
                         <input
                         type="text"
                         name="firstname"
                         placeholder="Prénom"
                         className="
+                            w-full
                             h-14
                             rounded-[10px]
                             px-6
-                            text-lg
+                            text-sm md:text-lg
                             bg-white
                             shadow-md
                             outline-none
@@ -121,10 +123,11 @@ export default function Formulaire() {
                         type="text"
                         placeholder="Nom de famille"
                         className="
+                            w-full
                             h-14
                             rounded-[10px]
                             px-6
-                            text-lg
+                            text-sm md:text-lg
                             bg-white
                             shadow-md
                             outline-none
@@ -137,10 +140,11 @@ export default function Formulaire() {
                         name="lastname"
                         placeholder="Entreprise"
                         className="
+                            w-full
                             h-14
                             rounded-[10px]
                             px-6
-                            text-lg
+                            text-sm md:text-lg
                             bg-white
                             shadow-md
                             outline-none
@@ -148,11 +152,7 @@ export default function Formulaire() {
                         required
                         />
 
-
-                        
-
                     </div>
-
                     {/* Message */}
                     <textarea
                         name="message"
@@ -162,7 +162,8 @@ export default function Formulaire() {
                         w-full
                         rounded-[10px]
                         p-6
-                        text-lg
+                        md:text-lg
+                        text-sm
                         bg-white
                         shadow-md
                         outline-none

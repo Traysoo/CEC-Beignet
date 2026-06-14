@@ -1,6 +1,8 @@
 // AnimatedCircle.tsx
 'use client';
+
 const colors = ["#CDE2AE", "#EBC8DC", "#EBD78C"];
+
 export default function AnimatedCircle({ current }: { current: number }) {
   return (
     <>
@@ -10,6 +12,19 @@ export default function AnimatedCircle({ current }: { current: number }) {
         style={{
           backgroundColor: colors[current],
           transition: "background-color 1.2s ease",
+        }}
+      />
+
+      {/* Mobile */}
+      <div
+        className="block md:hidden absolute rounded-full"
+        style={{
+          backgroundColor: colors[current],
+          transition: "background-color 1.2s ease",
+          width: "90vw",
+          height: "90vw",
+          bottom: "20vw",
+          right: "-65vw",
         }}
       />
     </>

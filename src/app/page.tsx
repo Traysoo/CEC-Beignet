@@ -23,6 +23,7 @@ export const scrollTo = (id: string) => {
   });
 };
 
+
 export default function Home() {
   
   const [current, setCurrent] = useState(0);
@@ -33,9 +34,10 @@ export default function Home() {
     }, INTERVAL);
     return () => clearInterval(interval);
   }, []);
+  
 
   return (
-    <main className="min-h-screen bg-[#f4e7dd]">
+    <main className="min-h-screen bg-[#f4e7dd] overflow-x-hidden">
       {/* Navbar */}
       <Navbar />
 
@@ -208,7 +210,6 @@ export default function Home() {
               </h2>
 
               {/* RotatingCircle version mobile — centré, en dessous */}
-              {/* RotatingCircle version mobile */}
               <div className="flex justify-center mb-10 mt-5 md:hidden">
                 <div className="relative inline-flex">
                   <RotatingCircle mobile/>
@@ -293,33 +294,57 @@ export default function Home() {
 
           <AnimatedImage current={current}/>
 
-          <p className="text-sm md:text-xl leading-relaxed mb-12 ">
+          <p className="text-sm md:text-xl leading-relaxed mb-12">
             Nouveaux imaginaires, nouvelles représentations, nouveaux sensibles… <br /> 
             chaque histoire se révèle dans un monde qui s’élève.          
           </p>
 
+          {/* Desktop */}
           <Image
             src="/Link.png"
             alt=""
             width={500}
             height={500}
-            className="mx-auto h-auto mt-20"
+            className="mx-auto h-auto mt-20 hidden md:block"
+            priority
+          />
+
+          {/* Mobile — aligné à gauche */}
+          <Image
+            src="/LinkMobile.png"
+            alt=""
+            width={200}
+            height={300}
+            className="h-auto mt-10 block md:hidden ml-0"
             priority
           />
 
         </div>
 
         {/* Éléments décoratifs à droite */}
+
+        {/* DonutOrange Desktop */}
         <Image
           src="/DonutOrange.png"
           alt=""
           width={270}
           height={270}
-          className="absolute 
-          md:top-100 md:right-[5px] 
-          w-[120px] md:w-[270px]
-          mt-5 ml-62    
-          z-20"
+          className="absolute z-20 top-100 right-[5px] w-[270px] hidden md:block"
+        />
+
+        {/* DonutOrange Mobile */}
+        <Image
+          src="/DonutOrange.png"
+          alt=""
+          width={120}
+          height={120}
+          className="absolute z-20 block md:hidden"
+          style={{
+            // Mobile uniquement — sur desktop les classes md: prennent le dessus
+            width: "clamp(80px, 40vw, 120px)",
+            bottom: "40vw",
+            right: "4vw",
+          }}
         />
 
         <AnimatedCircle current={current}/>
