@@ -35,7 +35,7 @@ export default function Footer() {
         <ul className="space-y-3 text-black/70">
           <li>
             <a href="#accueil" className="hover:text-black transition">
-              Accueil
+              Manifeste
             </a>
           </li>
 

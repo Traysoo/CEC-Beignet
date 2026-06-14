@@ -37,7 +37,7 @@ export default function Home() {
   
 
   return (
-    <main className="min-h-screen bg-[#f4e7dd] overflow-x-hidden">
+    <main className="min-h-screen bg-[#f4e7dd]">
       {/* Navbar */}
       <Navbar />
 

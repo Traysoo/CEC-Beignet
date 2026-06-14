@@ -122,8 +122,8 @@ export default function RotatingCircle({ mobile = false }: { mobile?: boolean })
           return isDisabled ? (
             <span
               key={i}
-              onMouseEnter={() => setPaused(true)}
-              onMouseLeave={() => setPaused(false)}
+              onPointerEnter={() => setPaused(true)}
+              onPointerLeave={() => setPaused(false)}
               style={sharedStyle}
               className={`${sharedClass} cursor-default`}
             >
@@ -135,8 +135,8 @@ export default function RotatingCircle({ mobile = false }: { mobile?: boolean })
               href={item.href}
               target="_blank"
               rel="noreferrer"
-              onMouseEnter={() => setPaused(true)}
-              onMouseLeave={() => setPaused(false)}
+              onPointerEnter={() => setPaused(true)}
+              onPointerLeave={() => setPaused(false)}
               style={sharedStyle}
               className={`${sharedClass} hover:scale-110`}
             >

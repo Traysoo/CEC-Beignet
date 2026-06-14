@@ -30,7 +30,7 @@ export default function Navbar() {
 
         {/* Center: Links — desktop */}
         <nav className="hidden md:flex gap-8 absolute left-1/2 -translate-x-1/2">
-          <ButtonDyn label="Accueil"     image="/LogoTextlessPink.png"   onClick={() => handleNav("accueil")} />
+          <ButtonDyn label="Manifeste"     image="/LogoTextlessPink.png"   onClick={() => handleNav("accueil")} />
           <ButtonDyn label="Le Beignet"  image="/LogoTextlessGreen.png"  onClick={() => handleNav("beignet")} />
           <ButtonDyn label="L'Alliance"  image="/LogoTextlessBlue.png"   onClick={() => handleNav("alliance")} />
           <ButtonDyn label="Contact"     image="/LogoTextlessYellow.png" onClick={() => handleNav("contact")} />
@@ -67,8 +67,8 @@ export default function Navbar() {
           open ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="flex flex-col pt-5 px-10 pb-6 gap-5">
-          <ButtonDyn label="Accueil"     image="/LogoTextlessPink.png"   onClick={() => handleNav("accueil")} />
+        <nav className="flex flex-col px-10 pb-6 gap-5">
+          <ButtonDyn label="Manifeste"     image="/LogoTextlessPink.png"   onClick={() => handleNav("accueil")} />
           <ButtonDyn label="Le Beignet"  image="/LogoTextlessGreen.png"  onClick={() => handleNav("beignet")} />
           <ButtonDyn label="L'Alliance"  image="/LogoTextlessBlue.png"   onClick={() => handleNav("alliance")} />
           <ButtonDyn label="Contact"     image="/LogoTextlessYellow.png" onClick={() => handleNav("contact")} />
