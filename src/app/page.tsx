@@ -327,7 +327,7 @@ export default function Home() {
       </section>
 
       {/* Magazine */}
-      <div className="overflow-hidden -my-[8vw] mt-[3vh] md:mt-[10vw] mb-[5vh] md:mb-[16vw]">
+      <div className="mt-[3vh] md:mt-[10vw] mb-[5vh] md:mb-[16vw]">
         <Image
           src="/Magasine.png"
           alt=""
