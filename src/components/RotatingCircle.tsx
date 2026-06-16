@@ -4,36 +4,33 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 const items = [
-  { src: "/Mieux.png",       href: "https://mieux.com/" },
-  { src: "/Pixelis.png",     href: "https://www.pixelis.com/" },
+  { src: "/Mieux.png", href: "https://mieux.com/" },
+  { src: "/Pixelis.png", href: "https://www.pixelis.com/" },
   { src: "/Lajolieprod.png", href: "https://lajolieprod.com/" },
-  { src: "/OorZone.png",     href: "https://oorzone.fr/" },
-  { src: "/Shortlinks.png",  href: "https://shortlinks.fr/" },
-  { src: "/goodrush.png",    href: "null" },
-  { src: "/Uka.png",         href: "https://www.uka-partner.com/" },
-  { src: "/Mooxy.png",       href: "https://mooxy.co/" },
-  { src: "/MarsAtWork.png",  href: "https://marsatwork.fr/" },
-  { src: "/Enov.png",        href: "https://enov.fr/" },
-  { src: "/Looksharp.png",   href: "https://looksharp.fr/language/en/home/" },
-  { src: "/NiKiTa.png",      href: "https://www.nikita.fr/" },
+  { src: "/OorZone.png", href: "https://oorzone.fr/" },
+  { src: "/Shortlinks.png", href: "https://shortlinks.fr/" },
+  { src: "/goodrush.png", href: "null" },
+  { src: "/Uka.png", href: "https://www.uka-partner.com/" },
+  { src: "/Mooxy.png", href: "https://mooxy.co/" },
+  { src: "/MarsAtWork.png", href: "https://marsatwork.fr/" },
+  { src: "/Enov.png", href: "https://enov.fr/" },
+  { src: "/Looksharp.png", href: "https://looksharp.fr/language/en/home/" },
+  { src: "/NiKiTa.png", href: "https://www.nikita.fr/" },
 ];
 
-const DESKTOP = {
-  circleSize: 680,
-  orbitRadius: 250,
-  buttonSize: 135,
-  duration: 20,
-};
-
 const MOBILE_RATIO = {
-  // le cercle prend 85% de la largeur de l'écran, avec un max de 340px
   circleRatio: 0.85,
   maxCircle: 315,
 };
 
 function getMobileConfig(screenWidth: number) {
-  const circleSize = Math.min(screenWidth * MOBILE_RATIO.circleRatio, MOBILE_RATIO.maxCircle);
-  const scale = circleSize / 340; // 340 est notre référence mobile de base
+  const circleSize = Math.min(
+    screenWidth * MOBILE_RATIO.circleRatio,
+    MOBILE_RATIO.maxCircle
+  );
+
+  const scale = circleSize / 340;
+
   return {
     circleSize,
     orbitRadius: Math.round(125 * scale),
@@ -42,36 +39,76 @@ function getMobileConfig(screenWidth: number) {
   };
 }
 
-export default function RotatingCircle({ mobile = false }: { mobile?: boolean }) {
+function getDesktopConfig(screenWidth: number) {
+  let circleSize = 680;
+
+  if (screenWidth < 1400) {
+    circleSize = 680 - (1400 - screenWidth) * 0.45;
+  }
+
+  circleSize = Math.max(circleSize, 260);
+
+  const scale = circleSize / 680;
+
+  return {
+    circleSize,
+    orbitRadius: Math.round(250 * scale),
+    buttonSize: Math.round(135 * scale),
+    duration: 20,
+  };
+}
+
+export default function RotatingCircle({
+  mobile = false,
+}: {
+  mobile?: boolean;
+}) {
   const [paused, setPaused] = useState(false);
 
-  // Config dynamique pour mobile, statique pour desktop
   const [config, setConfig] = useState(
-    mobile ? getMobileConfig(340) : DESKTOP
+    mobile
+      ? getMobileConfig(340)
+      : getDesktopConfig(1440)
   );
 
   useEffect(() => {
-    if (!mobile) return;
+    const update = () => {
+      if (mobile) {
+        setConfig(getMobileConfig(window.innerWidth));
+      } else {
+        setConfig(getDesktopConfig(window.innerWidth));
+      }
+    };
 
-    const update = () => setConfig(getMobileConfig(window.innerWidth));
-    update(); // appel immédiat au montage
+    update();
 
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, [mobile]);
 
-  const { circleSize, orbitRadius, buttonSize } = config;
-  const centerImageSize = mobile ? Math.round(165 * (circleSize / 340)) : 330;
+  const {
+    circleSize,
+    orbitRadius,
+    buttonSize,
+    duration,
+  } = config;
+
+  const centerImageSize = mobile
+    ? Math.round(165 * (circleSize / 340))
+    : Math.round(330 * (circleSize / 680));
 
   return (
     <div
       className="relative flex items-center justify-center"
-      style={{ width: circleSize, height: circleSize }}
+      style={{
+        width: circleSize,
+        height: circleSize,
+      }}
     >
       {/* Cercle blanc */}
       <div className="absolute inset-0 rounded-full bg-white" />
 
-      {/* Image centrale */}
+      {/* Centre */}
       <div className="absolute z-10 flex items-center justify-center">
         <Image
           src="/CircleCentre.png"
@@ -82,21 +119,29 @@ export default function RotatingCircle({ mobile = false }: { mobile?: boolean })
         />
       </div>
 
-      {/* Anneau rotatif */}
+      {/* Anneau */}
       <div
         style={{
           position: "absolute",
           width: circleSize,
           height: circleSize,
-          animation: `spin ${DESKTOP.duration}s linear infinite`,
+          animation: `spin ${duration}s linear infinite`,
           animationPlayState: paused ? "paused" : "running",
         }}
       >
         {items.map((item, i) => {
           const angle = (i / items.length) * 360;
           const rad = (angle * Math.PI) / 180;
-          const x = circleSize / 2 + orbitRadius * Math.cos(rad) - buttonSize / 2;
-          const y = circleSize / 2 + orbitRadius * Math.sin(rad) - buttonSize / 2;
+
+          const x =
+            circleSize / 2 +
+            orbitRadius * Math.cos(rad) -
+            buttonSize / 2;
+
+          const y =
+            circleSize / 2 +
+            orbitRadius * Math.sin(rad) -
+            buttonSize / 2;
 
           const isDisabled = item.href === "null";
 
@@ -106,7 +151,7 @@ export default function RotatingCircle({ mobile = false }: { mobile?: boolean })
             top: y,
             width: buttonSize,
             height: buttonSize,
-            animation: `counter-spin ${DESKTOP.duration}s linear infinite`,
+            animation: `counter-spin ${duration}s linear infinite`,
             animationPlayState: paused ? "paused" : "running",
           };
 
@@ -114,8 +159,19 @@ export default function RotatingCircle({ mobile = false }: { mobile?: boolean })
             "flex items-center justify-center rounded-full bg-white transition-transform duration-200 overflow-hidden";
 
           const inner = (
-            <div style={{ position: "relative", width: buttonSize - 16, height: buttonSize - 16 }}>
-              <Image src={item.src} alt="" fill className="object-contain" />
+            <div
+              style={{
+                position: "relative",
+                width: buttonSize - 16,
+                height: buttonSize - 16,
+              }}
+            >
+              <Image
+                src={item.src}
+                alt=""
+                fill
+                className="object-contain"
+              />
             </div>
           );
 
@@ -149,11 +205,12 @@ export default function RotatingCircle({ mobile = false }: { mobile?: boolean })
       <style>{`
         @keyframes spin {
           from { transform: rotate(0deg); }
-          to   { transform: rotate(360deg); }
+          to { transform: rotate(360deg); }
         }
+
         @keyframes counter-spin {
           from { transform: rotate(0deg); }
-          to   { transform: rotate(-360deg); }
+          to { transform: rotate(-360deg); }
         }
       `}</style>
     </div>

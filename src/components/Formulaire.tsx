@@ -90,8 +90,7 @@ export default function Formulaire() {
                         h-14
                         rounded-[10px]
                         px-6
-                        md:text-lg
-                        text-base
+                        text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)]
                         bg-white
                         shadow-md
                         outline-none
@@ -111,7 +110,7 @@ export default function Formulaire() {
                             h-14
                             rounded-[10px]
                             px-6
-                            text-base md:text-lg
+                            text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)]
                             bg-white
                             shadow-md
                             outline-none
@@ -127,7 +126,7 @@ export default function Formulaire() {
                             h-14
                             rounded-[10px]
                             px-6
-                            text-base md:text-lg
+                            text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)]
                             bg-white
                             shadow-md
                             outline-none
@@ -144,7 +143,7 @@ export default function Formulaire() {
                             h-14
                             rounded-[10px]
                             px-6
-                            text-base md:text-lg
+                            text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)]
                             bg-white
                             shadow-md
                             outline-none
@@ -162,8 +161,7 @@ export default function Formulaire() {
                         w-full
                         rounded-[10px]
                         p-6
-                        md:text-lg
-                        text-base
+                        text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)]
                         bg-white
                         shadow-md
                         outline-none

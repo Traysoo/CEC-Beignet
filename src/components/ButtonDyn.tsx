@@ -34,7 +34,7 @@ export default function ButtonDyn({ label, image, onClick }: ButtonDynProps) {
       />
     </div>
 
-    <span className="relative z-10">
+    <span className="relative z-10 whitespace-nowrap">
       {label}
     </span>
 

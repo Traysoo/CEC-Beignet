@@ -42,54 +42,68 @@ export default function Home() {
       <Navbar />
 
       {/* Amorce */}
-      <section id="accueil" className="max-w-7xl mx-auto px-6 py-20 md:py-45">
+      <section id="accueil" className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)] py-20 md:py-45">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-center">
 
           {/* Image en premier dans le DOM → apparaît au-dessus sur mobile */}
-            <div className="relative flex justify-center md:justify-end md:order-2 w-[calc(100%+3rem)] -mx-6 md:mx-0 md:w-auto">        
-              <Image
-              src="/Field.png"
-              alt="Illustration"
-              width={800}
-              height={600}
-              className="w-full md:w-13/14 h-auto translate-y-0 md:translate-y-6"
+          <div className="relative flex justify-center md:justify-end md:order-2 w-[calc(100%+3rem)] -mx-6 md:mx-0 md:w-auto">        
+            <Image
+            src="/Field.png"
+            alt="Illustration"
+            width={800}
+            height={600}
+            className="w-full md:w-13/14 h-auto -translate-y-1 md:translate-y-6"
             />
 
             {/* DonutPink : toujours absolu, repositionné selon l'écran */}
             <Image
               src="/DonutPink.png"
-              alt="Badge"
+              alt=""
               width={230}
               height={180}
               className="
                 absolute
-                w-[140px] md:w-[230px]
-                -bottom-14 -right-4
-                md:-bottom-30 md:-right-19
+                w-[38vw]
+                max-w-[250px]
+                min-w-[100px]
+                -bottom-[15%]
+                -right-[5%]
+                md:w-[18vw]
+                md:max-w-[230px]
+                md:min-w-[100px]
+                md:-bottom-[25%]
+                md:-right-[13%]
               "
             />
           </div>
 
           {/* Partie gauche → passe en dessous sur mobile */}
-          <div className="md:order-1 md:-ml-4 mt-8 md:mt-0">
-            <h1 className="text-3xl md:text-5xl font-extrabold leading-snug mb-8">
-              <span className="relative inline-block">
+          <div className="md:order-1 mt-8 md:mt-0">
+            <h1 className="text-3xl md:text-[clamp(1.6rem,4vw,3rem)] md:whitespace-nowrap font-extrabold leading-snug mb-8">
+              <span className="relative inline-block whitespace-nowrap">
                 <span className="relative inline-block z-10">
                   Changer les histoires
                 </span>
                 <Image
                   src="/ComaPink.svg"
-                  alt="Coma Pink"
+                  alt=""
                   width={298}
                   height={60}
-                  className="absolute bottom-0 left-30 md:left-47 w-[180px] md:w-[298px] z-0"
+                  className="
+                    absolute
+                    bottom-0
+                    left-[42%]
+                    w-[65%]
+                    max-w-[298px]
+                    z-0
+                  "
                 />
               </span>
               <br />
               qu’on (se) raconte
             </h1>
 
-            <p className="text-base  md:text-xl  font-medium text-black-600 leading-relaxed mb-8">
+            <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] font-medium text-black-600 leading-relaxed mb-8">
               Rendre irrésistible les nouveaux récits est notre projet.
               <br /><br />
               Le Donut est notre boussole. Dans un monde épuisé qui appelle à une transition apaisée,
@@ -102,7 +116,7 @@ export default function Home() {
             <div className="flex md:block justify-center">
               <button className="
                 bg-white text-black px-6 py-3
-                border border-gray-200 md:text-xl text-base font-medium shadow-lg
+                border border-gray-200 text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] font-medium shadow-lg
                 hover:opacity-90 transition duration-300
                 hover:bg-gray-200 disabled:opacity-50 cursor-pointer
                 "
@@ -117,45 +131,57 @@ export default function Home() {
 
       {/* Beignet */}
 
-      <section id="beignet" className="max-w-7xl mx-auto px-6 py-1 -mt-10 scroll-mt-10">
+      <section id="beignet" className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)] py-1 -mt-10 scroll-mt-10">
 
         {/* Mobile : flex colonne / Desktop : relative pour l'absolu */}
         <div className="flex flex-col md:relative">
 
-          {/* Image mobile */}
-          <div className="w-[calc(100%+3rem)] mt-3 mb-1 -ml-6 flex justify-center md:hidden">
+          <div className="relative">
+
+            {/* Image mobile */}
+            <div className="w-[calc(100%+3rem)] mt-3 mb-1 -ml-6 flex justify-center md:hidden">
+              <Image
+                src="/KateRaworthMobile.png"
+                alt=""
+                width={1700}
+                height={1700}
+                className="w-14/15 h-auto"
+              />
+            </div>
+
+            {/* Image desktop */}
             <Image
-              src="/KateRaworthMobile.png"
+              src="/KateRaworth.png"
               alt=""
               width={1700}
               height={1700}
-              className="w-14/15 h-auto"
+              className="w-[83%] h-auto hidden md:block"
             />
-          </div>
 
-          {/* Image desktop */}
-          <Image
-            src="/KateRaworth.png"
-            alt=""
-            width={1700}
-            height={1700}
-            className="w-[83%] h-auto hidden md:block"
-          />
-
-          {/* DonutBrown : repositionné sur mobile */}
-          <div className="relative md:absolute -left-12.5 md:-left-35 bottom-25 md:-bottom-10">
+            {/* DonutBrown : repositionné sur mobile */}
             <Image
               src="/DonutBrown.png"
               alt=""
               width={600}
               height={600}
-              className="w-40 md:w-82.5 h-auto md:z-10"
+              className="
+                absolute
+                w-[38vw]
+                max-w-[250px]
+                min-w-[160px]
+                -bottom-[18%]
+                right-[72%]
+                md:w-[22vw]
+                md:max-w-[350px]
+                md:min-w-[130px]
+                md:-bottom-[6%]
+                md:right-[85%]"
             />
           </div>
 
           {/* Bloc texte : dans le flux sur mobile, absolu sur desktop */}
-          <div className="-mt-18 md:mt-0 md:absolute md:top-20 md:right-0 md:w-[35%]">
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-snug mb-6">
+          <div className="mt-[20vw] md:-mt-6 md:absolute md:top-20 md:right-0 md:w-[35%]">
+            <h2 className="text-3xl md:text-[clamp(1.6rem,4vw,3rem)] md:whitespace-nowrap font-extrabold leading-snug mb-6">
               <span className="relative inline-block">
                 Nouvelle boussole
                 <br />
@@ -167,12 +193,18 @@ export default function Home() {
                   alt="Coma Green"
                   width={300}
                   height={80}
-                  className="absolute md:-left-12 -left-3 md:-bottom-1 bottom-0 w-[160px] md:w-[300px] z-0"
+                  className="
+                    absolute
+                    bottom-0
+                    -left-[7%]
+                    w-[65%]
+                    max-w-[298px]
+                    z-0"
                 />
               </span>
             </h2>
 
-            <p className="text-base md:text-xl leading-relaxed">
+            <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed">
               La théorie économique du Donut de K. Raworth offre un cadre culturel pour inventer les récits du monde de demain.
               <br /><br />
               Notre approche permet de traduire des enjeux systémiques en récits sensibles et d’en mesurer l’impact environnemental et social, pour contribuer à nourrir un espace juste et équitable pour l’humanité.
@@ -187,26 +219,34 @@ export default function Home() {
       {/* Alliance */}
 
       <section id="alliance" className="relative py-20 md:py-30 -mt-5">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)]">
 
           {/* Desktop : grille 2 colonnes / Mobile : flex colonne */}
           <div className="flex flex-col md:grid md:grid-cols-[74%_26%] items-start">
           
             {/* Colonne gauche */}
             <div>
-              <h2 className="text-3xl md:text-5xl font-extrabold leading-snug mb-8">
+              <h2 className="text-3xl md:text-[clamp(1.6rem,4vw,3rem)] md:whitespace-nowrap font-extrabold leading-snug mb-8">
                 <span className="relative inline-block">
-                  L’alliance des designers de {" "}
-                  <span className="relative inline-block z-10">
-                    désirs durables
+                  L’alliance des designers <br className="md:hidden"/> de {" "} 
+                  <span className="relative inline-block whitespace-nowrap">
+                    <span className="relative inline-block z-10">
+                      désirs durables
+                    </span>
+                    <Image
+                      src="/ComaBlue.svg"
+                      alt="Coma Pink"
+                      width={322}
+                      height={60}
+                      className="
+                      absolute 
+                      bottom-[9%]
+                      left-[1%]
+                      w-[101%]
+                      max-w-[508px]
+                      z-0"
+                    />
                   </span>
-                  <Image
-                    src="/ComaBlue.svg"
-                    alt="Coma Pink"
-                    width={322}
-                    height={60}
-                    className="absolute bottom-0 md:bottom-1 left-8 md:left-143 w-[61%] md:w-[37%] z-0"
-                  />
                 </span>
               </h2>
 
@@ -226,7 +266,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <p className="text-base md:text-xl leading-relaxed mb-12 mt-8 md:mt-14">
+              <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed mb-12 mt-8 md:mt-14">
                 Nous étions des créateurs de désirs consuméristes, nous sommes devenus des designers de désirs durables.
                 <br /><br />
                 13 agences et organisations expertes se sont alliées à la CEC pour bâtir en intelligence collective une Alliance fertile au service des marques et des organisations.
@@ -253,21 +293,32 @@ export default function Home() {
 
             {/* Colonne droite — cachée sur mobile, visible sur desktop */}
             <div className="hidden md:block relative min-h-[500px]">
-              <div className="absolute -top-25 right-[-120px] z-10">
+              <div className="absolute -top-[5vw] -right-[8vw] z-10">
                 <div className="translate-x-1/2">
                   <RotatingCircle />
                 </div>
-              </div>
 
               <Link href="https://cec-impact.org/" target="_blank" rel="noopener noreferrer">
                 <Image
                   src="/CEC.png"
                   alt=""
                   width={120}
-                  height={280}
-                  className="absolute top-95 right-[130px] z-10 transition-transform duration-300 hover:scale-110"
+                  height={120}
+                  className="
+                    absolute
+                    left-[52%]
+                    bottom-[5%]
+                    w-[clamp(70px,8vw,120px)]
+                    h-auto
+                    z-20
+                    transition-transform
+                    duration-300
+                    hover:scale-110
+                  "
                 />
               </Link>
+                            </div>
+
             </div>
 
           </div>
@@ -276,7 +327,7 @@ export default function Home() {
       </section>
 
       {/* Magazine */}
-      <div className="mt-[3vh] md:mt-[15vh] mb-[5vh] md:mb-[20vh]">
+      <div className="overflow-hidden -my-[8vw] mt-[3vh] md:mt-[10vw] mb-[5vh] md:mb-[16vw]">
         <Image
           src="/Magasine.png"
           alt=""
@@ -291,11 +342,11 @@ export default function Home() {
       <section className="relative py-40">
 
         {/* Contenu centré */}
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)] text-center">
 
           <AnimatedImage current={current}/>
 
-          <p className="text-base md:text-xl leading-relaxed mb-12">
+          <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed mb-12">
             Nouveaux imaginaires, nouvelles représentations, nouveaux sensibles… <br /> 
             chaque histoire se révèle dans un monde qui s’élève.          
           </p>
@@ -306,7 +357,14 @@ export default function Home() {
             alt=""
             width={500}
             height={500}
-            className="mx-auto h-auto mt-20 hidden md:block"
+            className="mx-auto 
+            h-auto 
+            mt-20 
+            hidden 
+            md:block   
+            w-[35vw]
+            max-w-[500px]
+            min-w-[280px]"
             priority
           />
 
@@ -324,30 +382,6 @@ export default function Home() {
 
         {/* Éléments décoratifs à droite */}
 
-        {/* DonutOrange Desktop */}
-        <Image
-          src="/DonutOrange.png"
-          alt=""
-          width={270}
-          height={270}
-          className="absolute z-20 top-100 right-[5px] w-[270px] hidden md:block"
-        />
-
-        {/* DonutOrange Mobile */}
-        <Image
-          src="/DonutOrange.png"
-          alt=""
-          width={120}
-          height={120}
-          className="absolute z-20 block md:hidden"
-          style={{
-            // Mobile uniquement — sur desktop les classes md: prennent le dessus
-            width: "clamp(80px, 40vw, 120px)",
-            bottom: "40vw",
-            right: "4vw",
-          }}
-        />
-
         <AnimatedCircle current={current}/>
 
       </section>
@@ -356,27 +390,33 @@ export default function Home() {
       {/* Contact */}
 
       <section id="contact" className="relative py-5 overflow-hidden -mt-20 scroll-mt-10 ">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)]">
 
           {/* Titre */}
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-8">
+          <h2 className="text-3xl md:text-[clamp(1.6rem,4vw,3rem)] md:whitespace-nowrap font-extrabold mb-8">
             <span className="relative inline-block">
-                  <span className="relative inline-block z-10">
-                    Nous contacter
-                  </span>
+              <span className="relative inline-block z-10">
+                Nous contacter
+              </span>
 
-                  <Image
-                    src="/ComaPink.svg"
-                    alt="Coma Pink"
-                    width={300}
-                    height={60}
-                    className="md:w-60 w-48 absolute md:-bottom-2 bottom-0 md:left-20 left-9 z-0"
-                  />
-                </span>
+              <Image
+                src="/ComaPink.svg"
+                alt="Coma Pink"
+                width={300}
+                height={60}
+                className="md:
+                absolute
+                bottom-0
+                left-[22%]
+                w-[90%]
+                max-w-[330px]
+                z-0"
+              />
+            </span>
           </h2>
 
           {/* Texte */}
-          <p className="text-base md:text-xl leading-relaxed md:mb-16 mb-16 md:mt-12 mt-10 max-w-3xl">
+          <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed md:mb-16 mb-16 md:mt-12 mt-10 max-w-3xl">
             Retrouver de la puissance d’agir en cultivant un nouveau narratif.
           </p>
 
@@ -391,13 +431,14 @@ export default function Home() {
           className="
             absolute
             top-50
-            left-[-1200px]
-            w-[1300px]
-            h-[1300px]
+            left-[clamp(-1300px,-90vw,-1700px)]
+            w-[100vw]
+            h-[100vw]
             rounded-full
             bg-[#EBC8DC]
-            md:block
             hidden
+            md:block
+
           "
         />
         
