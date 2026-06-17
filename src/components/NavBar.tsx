@@ -1,6 +1,6 @@
 'use client';
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ButtonDyn from "./ButtonDyn";
 import { getLenis } from "@/lib/lenis";
 
@@ -13,14 +13,37 @@ export const scrollTo = (id: string) => {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   const handleNav = (id: string) => {
     scrollTo(id);
     setOpen(false);
   };
 
+  useEffect(() => {
+    let lastY = 0;
+
+    const handleScroll = ({ scroll }: { scroll: number }) => {
+      if (scroll > lastY && scroll > 80) {
+        setHidden(true);   // scroll vers le bas → cache
+      } else {
+        setHidden(false);  // scroll vers le haut → montre
+      }
+      lastY = scroll;
+    };
+
+    const lenis = getLenis();
+    lenis?.on("scroll", handleScroll);
+    return () => lenis?.off("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="w-full bg-white fixed top-0 left-0 right-0 z-50 shadow-sm">
+    <header className={`
+      w-full bg-white fixed top-0 left-0 right-0 z-50 shadow-sm
+      transition-transform duration-300
+      lg:translate-y-0
+      ${hidden ? "-translate-y-full" : "translate-y-0"}
+    `}>
       <div className="flex items-center justify-between px-10 py-4">
 
         {/* Left: Logo */}
@@ -29,7 +52,7 @@ export default function Navbar() {
         </button>
 
         {/* Center: Links — desktop */}
-        <nav className="hidden md:flex gap-8 absolute left-1/2 -translate-x-1/2">
+        <nav className="hidden lg:flex gap-8 absolute left-1/2 -translate-x-1/2">
           <ButtonDyn label="Manifeste"     image="/LogoTextlessPink.png"   onClick={() => handleNav("accueil")} />
           <ButtonDyn label="Le Beignet"  image="/LogoTextlessGreen.png"  onClick={() => handleNav("beignet")} />
           <ButtonDyn label="L'Alliance"  image="/LogoTextlessBlue.png"   onClick={() => handleNav("alliance")} />
@@ -38,7 +61,7 @@ export default function Navbar() {
 
         {/* Burger button — mobile uniquement */}
         <button
-          className="md:hidden flex flex-col justify-center gap-[5px] cursor-pointer p-1"
+          className="lg:hidden flex flex-col justify-center gap-[5px] cursor-pointer p-1"
           onClick={() => setOpen((prev) => !prev)}
           aria-label="Menu"
         >
@@ -63,7 +86,7 @@ export default function Navbar() {
 
       {/* Menu mobile déroulant */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           open ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >

@@ -8,7 +8,7 @@ export default function AnimatedCircle({ current }: { current: number }) {
     <>
       {/* Desktop */}
       <div
-        className="hidden md:block absolute top-[calc(-22vw+204px)] -right-[76vw] w-[90vw] h-[90vw] rounded-full"
+        className="hidden md:block absolute top-[calc(-23vw+224px)] -right-[76vw] w-[90vw] h-[90vw] rounded-full"
         style={{
           backgroundColor: colors[current],
           transition: "background-color 1.2s ease",

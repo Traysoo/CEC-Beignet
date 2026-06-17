@@ -42,7 +42,7 @@ export default function Home() {
       <Navbar />
 
       {/* Amorce */}
-      <section id="accueil" className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)] py-20 md:py-45">
+      <section id="accueil" className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)] pt-20 pb-20 md:pt-45 md:pb-[13vw]">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-center">
 
           {/* Image en premier dans le DOM → apparaît au-dessus sur mobile */}
@@ -330,7 +330,7 @@ export default function Home() {
       </section>
 
       {/* Magazine */}
-      <div className="mt-[3vh] md:mt-[10vw] mb-[5vh] md:mb-[16vw]">
+      <div className="mt-[3vh] md:mt-[10vw] mb-[5vh] md:mb-[10vw]">
         <Image
           src="/Magasine.png"
           alt=""
