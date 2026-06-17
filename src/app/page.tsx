@@ -219,8 +219,35 @@ export default function Home() {
       {/* Alliance */}
 
       <section id="alliance" className="relative py-20 md:py-30 -mt-5">
-        <div className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)]">
 
+        {/* RotatingCircle — ancré sur le bord droit du viewport, toujours à moitié visible */}
+        <div
+          className="hidden md:block absolute z-10"
+          style={{ top: 'clamp(0px, calc((1800px - 100vw) * 0.2), 200px)', right: 0, transform: "translateX(50%)" }}
+        >
+          <RotatingCircle />
+          <Link href="https://cec-impact.org/" target="_blank" rel="noopener noreferrer">
+            <Image
+              src="/CEC.png"
+              alt=""
+              width={120}
+              height={120}
+              className="
+                absolute
+                left-[2%]
+                bottom-[5%]
+                w-[clamp(70px,8vw,120px)]
+                h-auto
+                z-20
+                transition-transform
+                duration-300
+                hover:scale-110
+              "
+            />
+          </Link>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)]">
           {/* Desktop : grille 2 colonnes / Mobile : flex colonne */}
           <div className="flex flex-col md:grid md:grid-cols-[74%_26%] items-start">
           
@@ -293,34 +320,9 @@ export default function Home() {
             </div>
 
             {/* Colonne droite — cachée sur mobile, visible sur desktop */}
-            <div className="hidden md:block relative min-h-[500px]">
-              <div className="absolute -top-[5vw] -right-[8vw] z-10">
-                <div className="translate-x-1/2">
-                  <RotatingCircle />
-                </div>
+            <div className="hidden md:block"/>
+        
 
-              <Link href="https://cec-impact.org/" target="_blank" rel="noopener noreferrer">
-                <Image
-                  src="/CEC.png"
-                  alt=""
-                  width={120}
-                  height={120}
-                  className="
-                    absolute
-                    left-[52%]
-                    bottom-[5%]
-                    w-[clamp(70px,8vw,120px)]
-                    h-auto
-                    z-20
-                    transition-transform
-                    duration-300
-                    hover:scale-110
-                  "
-                />
-              </Link>
-                            </div>
-
-            </div>
 
           </div>
 

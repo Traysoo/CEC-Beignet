@@ -42,8 +42,8 @@ function getMobileConfig(screenWidth: number) {
 function getDesktopConfig(screenWidth: number) {
   let circleSize = 680;
 
-  if (screenWidth < 1400) {
-    circleSize = 680 - (1400 - screenWidth) * 0.45;
+  if (screenWidth < 1500) {
+    circleSize = 680 - (1500 - screenWidth) * 0.45;
   }
 
   circleSize = Math.max(circleSize, 260);
