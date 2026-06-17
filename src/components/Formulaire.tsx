@@ -178,8 +178,9 @@ export default function Formulaire() {
                     <div
                         className={`
                         fixed
-                        top-8
-                        right-8
+                        top-28
+                        left-1/2
+                        -translate-x-1/2
                         z-50
                         px-6
                         py-4
@@ -220,6 +221,7 @@ export default function Formulaire() {
                     text-black
                     font-semibold
                     shadow-lg
+                    text-lg
                     hover:opacity-90
                     transition
                     duration-300

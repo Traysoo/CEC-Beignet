@@ -104,8 +104,7 @@ export default function Home() {
             </h1>
 
             <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] font-medium text-black-600 leading-relaxed mb-8">
-              Rendre irrésistible les nouveaux récits est notre projet.
-              <br /><br />
+              <span className="hidden lg:inline">Rendre irrésistible les nouveaux récits est notre projet.<br /><br /></span>
               Le Donut est notre boussole. Dans un monde épuisé qui appelle à une transition apaisée,
               nous avons choisi de nous rassembler. En dépassant nos égocentrismes, en scellant une
               alliance existentialiste. 13 agences et experts créatifs engagés à la CEC (Convention
@@ -116,7 +115,7 @@ export default function Home() {
             <div className="flex md:block justify-center">
               <button className="
                 bg-white text-black px-6 py-3
-                border border-gray-200 text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] font-medium shadow-lg
+                border border-gray-200 text-lg md:text-[clamp(0.5rem,1.7vw,1.25rem)] font-bold shadow-lg
                 hover:opacity-90 transition duration-300
                 hover:bg-gray-200 disabled:opacity-50 cursor-pointer
                 "
@@ -180,7 +179,7 @@ export default function Home() {
           </div>
 
           {/* Bloc texte : dans le flux sur mobile, absolu sur desktop */}
-          <div className="mt-[20vw] md:-mt-6 md:absolute md:top-20 md:right-0 md:w-[35%]">
+          <div className="mt-[24vw] md:-mt-6 md:absolute md:top-20 md:right-0 md:w-[35%]">
             <h2 className="text-3xl md:text-[clamp(1.6rem,4vw,3rem)] md:whitespace-nowrap font-extrabold leading-snug mb-6">
               <span className="relative inline-block">
                 Nouvelle boussole
@@ -205,8 +204,8 @@ export default function Home() {
             </h2>
 
             <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed">
-              La théorie économique du Donut de K. Raworth offre un cadre culturel pour inventer les récits du monde de demain.
-              <br /><br />
+              La théorie économique du Donut de K. Raworth offre un cadre culturel pour inventer les récits du monde de demain. {" "}
+              <br className="hidden lg:inline"/><br className="hidden lg:inline"/>
               Notre approche permet de traduire des enjeux systémiques en récits sensibles et d’en mesurer l’impact environnemental et social, pour contribuer à nourrir un espace juste et équitable pour l’humanité.
             </p>
           </div>
@@ -223,7 +222,7 @@ export default function Home() {
         {/* RotatingCircle — ancré sur le bord droit du viewport, toujours à moitié visible */}
         <div
           className="hidden md:block absolute z-10"
-          style={{ top: 'clamp(80px, calc((1800px - 100vw) * 0.2), 200px)',   right: 'max(0px, calc(0.4 * (100vw - 1500px)))', transform: 'translateX(50%)'}}
+          style={{ top: 'clamp(70px, calc((1800px - 100vw) * 0.15), 200px)',   right: 'max(0px, calc(0.4 * (100vw - 1500px)))', transform: 'translateX(50%)'}}
         >
           <RotatingCircle />
           <Link href="https://cec-impact.org/" target="_blank" rel="noopener noreferrer">
@@ -295,8 +294,8 @@ export default function Home() {
               </div>
 
               <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed mb-12 mt-8 md:mt-14">
-                Nous étions des créateurs de désirs consuméristes, nous sommes devenus des designers de désirs durables.
-                <br /><br />
+                Nous étions des créateurs de désirs consuméristes, nous sommes devenus des designers de désirs durables. {" "}
+                <br className="hidden lg:inline"/><br className="hidden lg:inline"/>
                 13 agences et organisations expertes se sont alliées à la CEC pour bâtir en intelligence collective une Alliance fertile au service des marques et des organisations.
               </p>
 
@@ -330,7 +329,7 @@ export default function Home() {
       </section>
 
       {/* Magazine */}
-      <div className="mt-[3vh] md:mt-[10vw] mb-[5vh] md:mb-[10vw]">
+      <div className="mt-[10vw] mb-[10vw] ">
         <Image
           src="/Magasine.png"
           alt=""
@@ -350,7 +349,7 @@ export default function Home() {
           <AnimatedImage current={current}/>
 
           <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed mb-12">
-            Nouveaux imaginaires, nouvelles représentations, nouveaux sensibles… <br /> 
+            Nouveaux imaginaires, nouvelles représentations, nouveaux sensibles… <br className="hidden md:inline"/> {" "} 
             chaque histoire se révèle dans un monde qui s’élève.          
           </p>
 
@@ -392,11 +391,11 @@ export default function Home() {
 
       {/* Contact */}
 
-      <section id="contact" className="relative py-5 overflow-hidden -mt-20 scroll-mt-10 ">
+      <section id="contact" className="relative py-5 overflow-hidden -mt-20 scroll-mt-10 pb-6">
         <div className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)]">
 
           {/* Titre */}
-          <h2 className="text-3xl md:text-[clamp(1.6rem,4vw,3rem)] md:whitespace-nowrap font-extrabold mb-8">
+          <h2 className="text-3xl md:text-[clamp(1.6rem,4vw,3rem)] md:whitespace-nowrap font-extrabold md:mb-20">
             <span className="relative inline-block">
               <span className="relative inline-block z-10">
                 Nous contacter
@@ -419,7 +418,7 @@ export default function Home() {
           </h2>
 
           {/* Texte */}
-          <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed md:mb-16 mb-16 md:mt-12 mt-10 max-w-3xl">
+          <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed md:mb-16 mb-10 md:mt-12 mt-6 max-w-3xl">
             Retrouver de la puissance d’agir en cultivant un nouveau narratif.
           </p>
 

@@ -47,7 +47,7 @@ export default function Footer() {
 
           <li>
             <a href="#alliance" className="hover:text-black transition">
-              Alliance
+              L’Alliance
             </a>
           </li>
 
