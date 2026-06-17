@@ -104,7 +104,7 @@ export default function Home() {
             </h1>
 
             <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] font-medium text-black-600 leading-relaxed mb-8">
-              <span className="hidden lg:inline">Rendre irrésistible les nouveaux récits est notre projet.<br /><br /></span>
+              <span className="hidden md:inline">Rendre irrésistible les nouveaux récits est notre projet.<br /><br /></span>
               Le Donut est notre boussole. Dans un monde épuisé qui appelle à une transition apaisée,
               nous avons choisi de nous rassembler. En dépassant nos égocentrismes, en scellant une
               alliance existentialiste. 13 agences et experts créatifs engagés à la CEC (Convention
@@ -205,7 +205,7 @@ export default function Home() {
 
             <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed">
               La théorie économique du Donut de K. Raworth offre un cadre culturel pour inventer les récits du monde de demain. {" "}
-              <br className="hidden lg:inline"/><br className="hidden lg:inline"/>
+              <br className="hidden md:inline"/><br className="hidden md:inline"/>
               Notre approche permet de traduire des enjeux systémiques en récits sensibles et d’en mesurer l’impact environnemental et social, pour contribuer à nourrir un espace juste et équitable pour l’humanité.
             </p>
           </div>
@@ -293,9 +293,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed mb-12 mt-8 md:mt-14">
+              <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed -mb-2 md:mb-12 mt-8 md:mt-14">
                 Nous étions des créateurs de désirs consuméristes, nous sommes devenus des designers de désirs durables. {" "}
-                <br className="hidden lg:inline"/><br className="hidden lg:inline"/>
+                <br className="hidden md:inline"/><br className="hidden md:inline"/>
                 13 agences et organisations expertes se sont alliées à la CEC pour bâtir en intelligence collective une Alliance fertile au service des marques et des organisations.
               </p>
 
@@ -308,14 +308,6 @@ export default function Home() {
                 className="w-full h-auto hidden md:block"
               />
 
-              {/* Image mobile */}
-              <Image
-                src="/RecitMobile.png"
-                alt=""
-                width={900}
-                height={600}
-                className="w-full h-auto block md:hidden"
-              />
             </div>
 
             {/* Colonne droite — cachée sur mobile, visible sur desktop */}
@@ -329,7 +321,7 @@ export default function Home() {
       </section>
 
       {/* Magazine */}
-      <div className="mt-[10vw] mb-[10vw] ">
+      <div className="md:mt-[8vw] mt-[10vw] mb-[10vw] ">
         <Image
           src="/Magasine.png"
           alt=""
@@ -341,15 +333,15 @@ export default function Home() {
 
       {/* Innover */}
 
-      <section className="relative py-40">
+      <section className="relative md:pt-40 md:pb-40 pt-40 pb-20">
 
         {/* Contenu centré */}
-        <div className="max-w-4xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)] text-center">
+        <div className="max-w-4xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)] md:text-center text-left">
 
           <AnimatedImage current={current}/>
 
-          <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed mb-12">
-            Nouveaux imaginaires, nouvelles représentations, nouveaux sensibles… <br className="hidden md:inline"/> {" "} 
+          <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed mb-12 pr-30 md:pr-0">
+            Nouveaux imaginaires, nouvelles représentations, nouveaux sensibles… <br/> {" "} 
             chaque histoire se révèle dans un monde qui s’élève.          
           </p>
 
@@ -370,15 +362,6 @@ export default function Home() {
             priority
           />
 
-          {/* Mobile — aligné à gauche */}
-          <Image
-            src="/LinkMobile.png"
-            alt=""
-            width={200}
-            height={300}
-            className="h-auto mt-10 block md:hidden ml-0"
-            priority
-          />
 
         </div>
 
@@ -391,7 +374,7 @@ export default function Home() {
 
       {/* Contact */}
 
-      <section id="contact" className="relative py-5 overflow-hidden -mt-20 scroll-mt-10 pb-6">
+      <section id="contact" className="relative py-5 overflow-hidden -mt-20 scroll-mt-10 pb-8">
         <div className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)]">
 
           {/* Titre */}

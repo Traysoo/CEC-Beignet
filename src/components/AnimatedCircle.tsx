@@ -35,21 +35,21 @@ export default function AnimatedCircle({ current }: { current: number }) {
         style={{
           backgroundColor: colors[current],
           transition: "background-color 1.2s ease",
-          width: "320px",
-          height: "320px",
-          bottom: "100px",
-          right: "-240px",
+          width: "190px",
+          height: "190px",
+          top: "170px",
+          right: "-100px",
         }}
       >
         <Image
           src="/DonutOrange.png"
           alt=""
-          width={120}
-          height={120}
+          width={130}
+          height={130}
           className="absolute z-20"
           style={{
-            top: "50%",
-            left: "0%",
+            top: "45%",
+            left: "5%",
             transform: "translate(-33%, -50%)",
           }}
         />
