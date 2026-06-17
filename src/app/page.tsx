@@ -254,6 +254,7 @@ export default function Home() {
               <div className="flex justify-center mb-10 mt-5 md:hidden">
                 <div className="relative inline-flex">
                   <RotatingCircle mobile/>
+
                   <Link href="https://cec-impact.org/" target="_blank" rel="noopener noreferrer">
                     <Image
                       src="/CEC.png"
@@ -431,8 +432,8 @@ export default function Home() {
           className="
             absolute
             top-50
-            left-[clamp(-1300px,-90vw,-1700px)]
-            w-[100vw]
+            left-[clamp(-1300px,-90vw,-2100px)]
+            w-[clamp(300px,100vw,1600px)]
             h-[100vw]
             rounded-full
             bg-[#EBC8DC]
