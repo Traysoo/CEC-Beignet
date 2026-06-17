@@ -20,22 +20,31 @@ export default function Navbar() {
     setOpen(false);
   };
 
-  useEffect(() => {
-    let lastY = 0;
+useEffect(() => {
+  let lastY = 0;
 
-    const handleScroll = ({ scroll }: { scroll: number }) => {
-      if (scroll > lastY && scroll > 80) {
-        setHidden(true);   // scroll vers le bas → cache
-      } else {
-        setHidden(false);  // scroll vers le haut → montre
-      }
-      lastY = scroll;
-    };
+  const handleScroll = (y: number) => {
+    if (y > lastY && y > 80) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+    lastY = y;
+  };
 
-    const lenis = getLenis();
-    lenis?.on("scroll", handleScroll);
-    return () => lenis?.off("scroll", handleScroll);
-  }, []);
+  // Lenis — desktop
+  const lenis = getLenis();
+  lenis?.on("scroll", ({ scroll }: { scroll: number }) => handleScroll(scroll));
+
+  // Natif — mobile
+  const nativeScroll = () => handleScroll(window.scrollY);
+  window.addEventListener("scroll", nativeScroll, { passive: true });
+
+  return () => {
+    lenis?.off("scroll", ({ scroll }: { scroll: number }) => handleScroll(scroll));
+    window.removeEventListener("scroll", nativeScroll);
+  };
+}, []);
 
   return (
     <header className={`
