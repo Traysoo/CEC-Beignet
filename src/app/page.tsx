@@ -395,7 +395,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)]">
 
           {/* Titre */}
-          <h2 className="text-3xl md:text-[clamp(1.6rem,4vw,3rem)] md:whitespace-nowrap font-extrabold md:mb-20">
+          <h2 className="text-3xl md:text-[clamp(1.6rem,4vw,3rem)] md:whitespace-nowrap font-extrabold md:mb-10">
             <span className="relative inline-block">
               <span className="relative inline-block z-10">
                 Nous contacter
@@ -418,7 +418,7 @@ export default function Home() {
           </h2>
 
           {/* Texte */}
-          <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed md:mb-16 mb-10 md:mt-12 mt-6 max-w-3xl">
+          <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed md:mb-16 mb-10 md:mt-1 mt-6 max-w-3xl">
             Retrouver de la puissance d’agir en cultivant un nouveau narratif.
           </p>
 
