@@ -24,7 +24,7 @@ export default function AnimatedCircle({ current }: { current: number }) {
           style={{
             top: "50%",
             left: "0%",
-            transform: "translate(-40%, -50%)",
+            transform: "translate(-33%, -50%)",
           }}
         />
       </div>
@@ -50,7 +50,7 @@ export default function AnimatedCircle({ current }: { current: number }) {
           style={{
             top: "50%",
             left: "0%",
-            transform: "translate(-40%, -50%)",
+            transform: "translate(-33%, -50%)",
           }}
         />
       </div>
