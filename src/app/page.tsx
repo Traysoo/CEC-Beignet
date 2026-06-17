@@ -223,7 +223,7 @@ export default function Home() {
         {/* RotatingCircle — ancré sur le bord droit du viewport, toujours à moitié visible */}
         <div
           className="hidden md:block absolute z-10"
-          style={{ top: 'clamp(0px, calc((1800px - 100vw) * 0.2), 200px)',   right: 'max(0px, calc(100vw - 1500px))', transform: 'translateX(50%)'}}
+          style={{ top: 'clamp(80px, calc((1800px - 100vw) * 0.2), 200px)',   right: 'max(0px, calc(0.4 * (100vw - 1500px)))', transform: 'translateX(50%)'}}
         >
           <RotatingCircle />
           <Link href="https://cec-impact.org/" target="_blank" rel="noopener noreferrer">
