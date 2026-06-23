@@ -42,7 +42,7 @@ export default function Home() {
       <Navbar />
 
       {/* Amorce */}
-      <section id="accueil" className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)] pt-20 pb-20 md:pt-45 md:pb-[13vw]">
+      <section id="accueil" className="max-w-8xl mx-auto px-6 md:px-[clamp(40px,6vw,80px)] pt-20 pb-20 md:pt-45 md:pb-[13vw]">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-center">
 
           {/* Image en premier dans le DOM → apparaît au-dessus sur mobile */}
@@ -78,7 +78,7 @@ export default function Home() {
           </div>
 
           {/* Partie gauche → passe en dessous sur mobile */}
-          <div className="md:order-1 mt-8 md:mt-0">
+          <div className="md:order-1 mt-6 md:mt-0">
             <h1 className="text-3xl md:text-[clamp(1.6rem,4vw,3rem)] md:whitespace-nowrap font-extrabold leading-snug mb-8">
               <span className="relative inline-block whitespace-nowrap">
                 <span className="relative inline-block z-10">
@@ -130,7 +130,7 @@ export default function Home() {
 
       {/* Beignet */}
 
-      <section id="beignet" className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)] py-1 -mt-10 scroll-mt-10">
+      <section id="beignet" className="max-w-8xl mx-auto px-6 md:px-[clamp(40px,6vw,80px)] py-1 -mt-10 scroll-mt-10">
 
         {/* Mobile : flex colonne / Desktop : relative pour l'absolu */}
         <div className="flex flex-col md:relative">
@@ -249,7 +249,7 @@ export default function Home() {
           </Link>
         </div>
         
-        <div className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)]">
+        <div className="max-w-8xl mx-auto px-6 md:px-[clamp(40px,6vw,80px)]">
           {/* Desktop : grille 2 colonnes / Mobile : flex colonne */}
           <div className="flex flex-col md:grid md:grid-cols-[74%_26%] items-start">
           
@@ -339,7 +339,7 @@ export default function Home() {
       <section className="relative md:pt-40 md:pb-40 pt-38 pb-20">
 
         {/* Contenu centré */}
-        <div className="max-w-4xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)] md:text-center text-left">
+        <div className="max-w-4xl mx-auto px-6 md:px-5 md:text-center text-left">
 
           <AnimatedImage current={current}/>
 
@@ -378,7 +378,7 @@ export default function Home() {
       {/* Contact */}
 
       <section id="contact" className="relative pb-8 pt-3 md:pt-5 overflow-hidden -mt-20 scroll-mt-10">
-        <div className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)]">
+        <div className="max-w-8xl mx-auto px-6 md:px-[clamp(40px,6vw,80px)]">
 
           {/* Titre */}
           <h2 className="text-3xl md:text-[clamp(1.6rem,4vw,3rem)] md:whitespace-nowrap font-extrabold md:mb-10">
