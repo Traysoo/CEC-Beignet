@@ -90,7 +90,7 @@ export default function Formulaire() {
                         h-14
                         rounded-[10px]
                         px-6
-                        text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)]
+                        text-base md:text-[clamp(0.88rem,1.4vw,1.4rem)]
                         bg-white
                         shadow-md
                         outline-none
@@ -110,7 +110,7 @@ export default function Formulaire() {
                             h-14
                             rounded-[10px]
                             px-6
-                            text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)]
+                            text-base md:text-[clamp(0.88rem,1.4vw,1.4rem)]
                             bg-white
                             shadow-md
                             outline-none
@@ -126,7 +126,7 @@ export default function Formulaire() {
                             h-14
                             rounded-[10px]
                             px-6
-                            text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)]
+                            text-base md:text-[clamp(0.88rem,1.4vw,1.4rem)]
                             bg-white
                             shadow-md
                             outline-none
@@ -143,7 +143,7 @@ export default function Formulaire() {
                             h-14
                             rounded-[10px]
                             px-6
-                            text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)]
+                            text-base md:text-[clamp(0.88rem,1.4vw,1.4rem)]
                             bg-white
                             shadow-md
                             outline-none
@@ -161,7 +161,7 @@ export default function Formulaire() {
                         w-full
                         rounded-[10px]
                         p-6
-                        text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)]
+                        text-base md:text-[clamp(0.88rem,1.4vw,1.4rem)]
                         bg-white
                         shadow-md
                         outline-none
@@ -221,7 +221,7 @@ export default function Formulaire() {
                     text-black
                     font-semibold
                     shadow-lg
-                    text-lg
+                    text-lg md:text-[clamp(0.88rem,1.4vw,1.4rem)]
                     hover:opacity-90
                     transition
                     duration-300

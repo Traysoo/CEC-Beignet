@@ -42,7 +42,7 @@ export default function Home() {
       <Navbar />
 
       {/* Amorce */}
-      <section id="accueil" className="max-w-8xl mx-auto px-6 md:px-[clamp(40px,6vw,80px)] pt-20 pb-20 md:pt-45 md:pb-[13vw]">
+      <section id="accueil" className="max-w-[1640px] mx-auto px-6 md:px-[clamp(20px,11.47vw-68px,120px)] pt-20 pb-20 md:pt-45 md:pb-50">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-center">
 
           {/* Image en premier dans le DOM → apparaît au-dessus sur mobile */}
@@ -69,10 +69,11 @@ export default function Home() {
                 -bottom-[15%]
                 -right-[5%]
                 md:w-[18vw]
-                md:max-w-[230px]
+                md:max-w-[280px]
                 md:min-w-[100px]
                 md:-bottom-[25%]
                 md:-right-[13%]
+
               "
             />
           </div>
@@ -103,7 +104,7 @@ export default function Home() {
               qu’on (se) raconte
             </h1>
 
-            <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] font-medium text-black-600 leading-relaxed mb-8">
+            <p className="text-base md:text-[clamp(0.88rem,1.4vw,1.4rem)] font-medium text-black-600 leading-relaxed mb-8">
               Rendre irrésistibles les nouveaux récits est notre projet.{" "}<br className="hidden md:inline"/><br className="hidden md:inline"/>
               Le Donut est notre boussole. Dans un monde épuisé qui appelle à une transition apaisée,
               nous avons choisi de nous rassembler. En dépassant nos égocentrismes, en scellant une
@@ -115,7 +116,7 @@ export default function Home() {
             <div className="flex md:block justify-center">
               <button className="
                 bg-white text-black px-6 py-3
-                border border-gray-200 text-lg md:text-[clamp(0.5rem,1.7vw,1.25rem)] font-bold shadow-lg
+                border border-gray-200 text-lg md:text-[clamp(0.88rem,1.4vw,1.4rem)] font-bold shadow-lg
                 hover:opacity-90 transition duration-300
                 hover:bg-gray-200 disabled:opacity-50 cursor-pointer
                 "
@@ -130,7 +131,7 @@ export default function Home() {
 
       {/* Beignet */}
 
-      <section id="beignet" className="max-w-8xl mx-auto px-6 md:px-[clamp(40px,6vw,80px)] py-1 -mt-10 scroll-mt-10">
+      <section id="beignet" className="max-w-[1640px] mx-auto px-6 md:px-[clamp(20px,11.47vw-68px,120px)] py-1 -mt-10 scroll-mt-10">
 
         {/* Mobile : flex colonne / Desktop : relative pour l'absolu */}
         <div className="flex flex-col md:relative">
@@ -182,7 +183,7 @@ export default function Home() {
           </div>
 
           {/* Bloc texte : dans le flux sur mobile, absolu sur desktop */}
-          <div className="mt-[8vw] md:-mt-6 md:absolute md:top-20 md:right-0 md:w-[35%]">
+          <div className="mt-[8vw] md:mt-10 md:absolute md:right-0 md:w-[35%]">
             <h2 className="text-3xl md:text-[clamp(1.6rem,4vw,3rem)] md:whitespace-nowrap font-extrabold leading-snug mb-6">
               <span className="relative inline-block">
                 Nouvelle boussole
@@ -206,7 +207,7 @@ export default function Home() {
               </span>
             </h2>
 
-            <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed">
+            <p className="text-base md:text-[clamp(0.88rem,1.4vw,1.4rem)] leading-relaxed">
               La théorie économique du Donut de Kate Raworth offre un cadre culturel pour inventer les récits du monde de demain. {" "}
               <br className="hidden md:inline"/><br className="hidden md:inline"/>
               Notre approche permet de traduire des enjeux systémiques en récits sensibles et d’en mesurer l’impact environnemental et social, pour contribuer à nourrir un espace juste et équitable pour l’humanité.
@@ -249,7 +250,7 @@ export default function Home() {
           </Link>
         </div>
         
-        <div className="max-w-8xl mx-auto px-6 md:px-[clamp(40px,6vw,80px)]">
+        <div className="max-w-[1640px] mx-auto px-6 md:px-[clamp(20px,11.47vw-68px,120px)]">
           {/* Desktop : grille 2 colonnes / Mobile : flex colonne */}
           <div className="flex flex-col md:grid md:grid-cols-[74%_26%] items-start">
           
@@ -296,7 +297,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed -mb-2 md:mb-12 mt-8 md:mt-14">
+              <p className="text-base md:text-[clamp(0.88rem,1.4vw,1.4rem)] leading-relaxed -mb-2 md:mb-12 mt-8 md:mt-14">
                 Nous étions des créateurs de désirs consuméristes, nous sommes devenus des designers de désirs durables. {" "}
                 <br className="hidden md:inline"/><br className="hidden md:inline"/>
                 12 agences et organisations expertes se sont alliées à la CEC pour bâtir en intelligence collective une Alliance fertile au service des marques et des organisations.
@@ -306,9 +307,12 @@ export default function Home() {
               <Image
                 src="/Recit.png"
                 alt=""
-                width={900}
-                height={500}
-                className="w-full h-auto hidden md:block"
+                width={1000}
+                height={560}
+                className="h-auto 
+                hidden md:block
+                "
+            
               />
 
             </div>
@@ -343,7 +347,7 @@ export default function Home() {
 
           <AnimatedImage current={current}/>
 
-          <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed mb-12 pr-30 md:pr-0">
+          <p className="text-base md:text-[clamp(0.88rem,1.4vw,1.4rem)] leading-relaxed mb-12 pr-30 md:pr-0">
             Nouveaux imaginaires, nouvelles représentations, nouveaux sensibles… <br/> {" "} 
             chaque histoire se révèle dans un monde qui s’élève.          
           </p>
@@ -360,7 +364,7 @@ export default function Home() {
             hidden 
             md:block   
             w-[35vw]
-            max-w-[500px]
+            max-w-[530px]
             min-w-[280px]"
             priority
           />
@@ -378,7 +382,7 @@ export default function Home() {
       {/* Contact */}
 
       <section id="contact" className="relative pb-8 pt-3 md:pt-5 overflow-hidden -mt-20 scroll-mt-10">
-        <div className="max-w-8xl mx-auto px-6 md:px-[clamp(40px,6vw,80px)]">
+        <div className="max-w-[1640px] mx-auto px-6 md:px-[clamp(20px,11.47vw-68px,120px)]">
 
           {/* Titre */}
           <h2 className="text-3xl md:text-[clamp(1.6rem,4vw,3rem)] md:whitespace-nowrap font-extrabold md:mb-10">
@@ -404,7 +408,7 @@ export default function Home() {
           </h2>
 
           {/* Texte */}
-          <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed md:mb-16 mb-10 md:mt-1 mt-6 max-w-3xl">
+          <p className="text-base md:text-[clamp(0.88rem,1.4vw,1.4rem)] leading-relaxed md:mb-16 mb-10 md:mt-1 mt-6 max-w-3xl">
             Retrouver de la puissance d’agir en cultivant un nouveau narratif.
           </p>
 
