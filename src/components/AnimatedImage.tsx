@@ -17,13 +17,23 @@ export default function AnimatedImage({ current }: { current: number }) {
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  useEffect(() => {
-    if (prevRef.current === current) return;
-    prevRef.current = current;
-    const fadeOut = setTimeout(() => setVisible(false), 0);
-    const swap    = setTimeout(() => { setDisplayed(current); setVisible(true); }, 600);
-    return () => { clearTimeout(fadeOut); clearTimeout(swap); };
-  }, [current]);
+useEffect(() => {
+  if (prevRef.current === current) return;
+  prevRef.current = current;
+
+  setVisible(false);
+
+  const swap = setTimeout(() => {
+    setDisplayed(current);
+    // on attend la frame suivante pour être sûr que l'image
+    // soit bien rendue avant de relancer le fade-in
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => setVisible(true));
+    });
+  }, 600);
+
+  return () => clearTimeout(swap);
+}, [current]);
 
   return (
     <div
