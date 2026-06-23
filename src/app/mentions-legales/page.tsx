@@ -117,12 +117,23 @@ export default function MentionsLegales() {
         </h2>
 
         <p>
-            OVH<br/>
-            2 rue Kellerman<br/>
-            BP 80157 59100 Roubaix<br/>
-            Formulaire de contact<br/>
-            FORMSPREE<br/>
-            26 Broadway Floor 8, New York, NY 10004, États-Unis
+          Vercel Inc.<br/>
+          340 S Lemon Ave #4133<br/>
+          Walnut, CA 91789<br/>
+          États-Unis
+          <br/>
+        </p>
+
+        <h2 className="text-2xl font-bold">
+          Nom de domaine
+        </h2>
+
+        <p>
+          Nom de domaine enregistré auprès de : Gandi SAS<br/>
+          63-65 boulevard Masséna<br/>
+          75013 Paris<br/>
+          France
+          <br/>
         </p>
 
         <h2 className="text-2xl font-bold">
