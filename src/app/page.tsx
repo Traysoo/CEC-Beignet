@@ -105,8 +105,7 @@ export default function Home() {
             </h1>
 
             <p className="text-base md:text-[clamp(0.88rem,1.4vw,1.4rem)] font-medium text-black-600 leading-relaxed mb-8">
-              Rendre irrésistibles les nouveaux récits est notre projet.{" "}<br className="hidden md:inline"/><br className="hidden md:inline"/>
-              Le Donut est notre boussole. Dans un monde épuisé qui appelle à une transition apaisée,
+              Rendre irrésistibles les nouveaux récits est notre projet. Le Donut est notre boussole. Dans un monde épuisé qui appelle à une transition apaisée,
               nous avons choisi de nous rassembler. En dépassant nos égocentrismes, en scellant une
               alliance existentialiste. 12 agences et experts créatifs engagés à la CEC (Convention
               des entreprises pour le Climat) oeuvrent désormais ensemble pour aligner et écrire
