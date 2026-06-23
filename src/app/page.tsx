@@ -104,10 +104,10 @@ export default function Home() {
             </h1>
 
             <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] font-medium text-black-600 leading-relaxed mb-8">
-              Rendre irrésistible les nouveaux récits est notre projet.{" "}<br className="hidden md:inline"/><br className="hidden md:inline"/>
+              Rendre irrésistibles les nouveaux récits est notre projet.{" "}<br className="hidden md:inline"/><br className="hidden md:inline"/>
               Le Donut est notre boussole. Dans un monde épuisé qui appelle à une transition apaisée,
               nous avons choisi de nous rassembler. En dépassant nos égocentrismes, en scellant une
-              alliance existentialiste. 13 agences et experts créatifs engagés à la CEC (Convention
+              alliance existentialiste. 12 agences et experts créatifs engagés à la CEC (Convention
               des entreprises pour le Climat) oeuvrent désormais ensemble pour aligner et écrire
               votre histoire à la créativité régénérée.
             </p>
@@ -207,7 +207,7 @@ export default function Home() {
             </h2>
 
             <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed">
-              La théorie économique du Donut de K. Raworth offre un cadre culturel pour inventer les récits du monde de demain. {" "}
+              La théorie économique du Donut de Kate Raworth offre un cadre culturel pour inventer les récits du monde de demain. {" "}
               <br className="hidden md:inline"/><br className="hidden md:inline"/>
               Notre approche permet de traduire des enjeux systémiques en récits sensibles et d’en mesurer l’impact environnemental et social, pour contribuer à nourrir un espace juste et équitable pour l’humanité.
             </p>
@@ -299,7 +299,7 @@ export default function Home() {
               <p className="text-base md:text-[clamp(0.5rem,1.7vw,1.25rem)] leading-relaxed -mb-2 md:mb-12 mt-8 md:mt-14">
                 Nous étions des créateurs de désirs consuméristes, nous sommes devenus des designers de désirs durables. {" "}
                 <br className="hidden md:inline"/><br className="hidden md:inline"/>
-                13 agences et organisations expertes se sont alliées à la CEC pour bâtir en intelligence collective une Alliance fertile au service des marques et des organisations.
+                12 agences et organisations expertes se sont alliées à la CEC pour bâtir en intelligence collective une Alliance fertile au service des marques et des organisations.
               </p>
 
               {/* Image desktop */}
@@ -419,7 +419,7 @@ export default function Home() {
           className="
             absolute
             top-50
-            left-[clamp(-1300px,-90vw,-2100px)]
+            left-[clamp(-1350px,-70vw,-2100px)]
             w-[clamp(300px,100vw,1600px)]
             h-[100vw]
             rounded-full

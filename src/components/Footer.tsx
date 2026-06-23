@@ -21,8 +21,6 @@ export default function Footer() {
 
         <p className="text-sm leading-relaxed text-black/70 max-w-xs">
           Rendre irrésistibles les nouveaux récits.
-          Une alliance engagée pour imaginer
-          les histoires du monde de demain.
         </p>
       </div>
 
