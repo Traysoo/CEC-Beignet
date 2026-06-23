@@ -19,7 +19,7 @@ const items = [
 ];
 
 const MOBILE_RATIO = {
-  circleRatio: 0.90,
+  circleRatio: 0.87,
   maxCircle: 345,
 };
 
