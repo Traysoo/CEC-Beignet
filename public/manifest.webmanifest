@@ -1,0 +1,17 @@
+{
+  "name": "Alliance du Beignet",
+  "short_name": "Beignet",
+  "icons": [
+    {
+      "src": "/LogoIcon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/LogoIconBig.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "display": "standalone"
+}
