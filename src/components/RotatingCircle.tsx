@@ -19,8 +19,8 @@ const items = [
 ];
 
 const MOBILE_RATIO = {
-  circleRatio: 0.85,
-  maxCircle: 315,
+  circleRatio: 0.90,
+  maxCircle: 345,
 };
 
 function getMobileConfig(screenWidth: number) {

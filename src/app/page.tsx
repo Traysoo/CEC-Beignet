@@ -138,13 +138,13 @@ export default function Home() {
           <div className="relative">
 
             {/* Image mobile */}
-            <div className="w-[calc(100%+3rem)] mt-3 mb-1 -ml-6 flex justify-center md:hidden">
+            <div className="w-[calc(100%+3rem)] mt-1 -ml-6 flex justify-center md:hidden">
               <Image
-                src="/KateRaworthMobile.png"
+                src="/KateraworthMobile.png"
                 alt=""
                 width={1700}
                 height={1700}
-                className="w-14/15 h-auto"
+                className="w-[91%] h-auto"
               />
             </div>
 
@@ -165,21 +165,24 @@ export default function Home() {
               height={600}
               className="
                 absolute
-                w-[38vw]
+                w-[43vw]
                 max-w-[250px]
-                min-w-[160px]
-                -bottom-[18%]
-                right-[72%]
+                min-w-[60px]
+                -bottom-[6%]
+                -right-[13%]
+                rotate-5
                 md:w-[22vw]
                 md:max-w-[350px]
                 md:min-w-[130px]
                 md:-bottom-[6%]
-                md:right-[85%]"
+                md:right-[85%]
+                md:rotate-0
+                "
             />
           </div>
 
           {/* Bloc texte : dans le flux sur mobile, absolu sur desktop */}
-          <div className="mt-[24vw] md:-mt-6 md:absolute md:top-20 md:right-0 md:w-[35%]">
+          <div className="mt-[8vw] md:-mt-6 md:absolute md:top-20 md:right-0 md:w-[35%]">
             <h2 className="text-3xl md:text-[clamp(1.6rem,4vw,3rem)] md:whitespace-nowrap font-extrabold leading-snug mb-6">
               <span className="relative inline-block">
                 Nouvelle boussole
@@ -217,7 +220,7 @@ export default function Home() {
 
       {/* Alliance */}
 
-      <section id="alliance" className="relative py-20 md:py-30 -mt-5">
+      <section id="alliance" className="relative py-17 md:py-30 -mt-5">
 
         {/* RotatingCircle — ancré sur le bord droit du viewport, toujours à moitié visible */}
         <div
@@ -266,7 +269,7 @@ export default function Home() {
                       height={60}
                       className="
                       absolute 
-                      bottom-[9%]
+                      bottom-[1%]
                       left-[1%]
                       w-[101%]
                       max-w-[508px]
@@ -333,7 +336,7 @@ export default function Home() {
 
       {/* Innover */}
 
-      <section className="relative md:pt-40 md:pb-40 pt-40 pb-20">
+      <section className="relative md:pt-40 md:pb-40 pt-38 pb-20">
 
         {/* Contenu centré */}
         <div className="max-w-4xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)] md:text-center text-left">
@@ -374,7 +377,7 @@ export default function Home() {
 
       {/* Contact */}
 
-      <section id="contact" className="relative py-5 overflow-hidden -mt-20 scroll-mt-10 pb-8">
+      <section id="contact" className="relative pb-8 pt-3 md:pt-5 overflow-hidden -mt-20 scroll-mt-10">
         <div className="max-w-7xl mx-auto px-6 md:px-[clamp(22px,1vw,26px)]">
 
           {/* Titre */}
