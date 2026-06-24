@@ -20,40 +20,24 @@ export default function AnimatedImage({ current }: { current: number }) {
   useEffect(() => {
     if (prevRef.current === current) return;
     prevRef.current = current;
+
+    // Phase 1 : fade out
     setVisible(false);
 
-    let cancelled = false;
-    const swap = setTimeout(async () => {
-      // précharge + décode la nouvelle image avant de l'afficher
-      const img = new window.Image();
-      img.src = images[current];
-      try {
-        if (img.decode) {
-          await img.decode();
-        } else {
-          await new Promise((resolve, reject) => {
-            img.onload = resolve;
-            img.onerror = reject;
-          });
-        }
-      } catch {
-        // on continue même si decode() échoue (ex: image déjà en cache sur certains navigateurs)
-      }
-
-      if (cancelled) return;
-
+    const swap = setTimeout(() => {
+      // Phase 2 : swap image (rendu React)
       setDisplayed(current);
+
+      // Phase 3 : attendre 2 frames que le DOM soit peint, puis fade in
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          if (!cancelled) setVisible(true);
+          // Petit délai supplémentaire pour mobile où le paint est plus lent
+          setTimeout(() => setVisible(true), 20);
         });
       });
-    }, 600);
+    }, 650); // légèrement > durée transition (600ms) pour être sûr que le fade out est fini
 
-    return () => {
-      cancelled = true;
-      clearTimeout(swap);
-    };
+    return () => clearTimeout(swap);
   }, [current]);
 
   return (
