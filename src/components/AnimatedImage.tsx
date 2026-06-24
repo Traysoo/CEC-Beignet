@@ -17,23 +17,44 @@ export default function AnimatedImage({ current }: { current: number }) {
     return () => window.removeEventListener("resize", check);
   }, []);
 
-useEffect(() => {
-  if (prevRef.current === current) return;
-  prevRef.current = current;
+  useEffect(() => {
+    if (prevRef.current === current) return;
+    prevRef.current = current;
+    setVisible(false);
 
-  setVisible(false);
+    let cancelled = false;
+    const swap = setTimeout(async () => {
+      // précharge + décode la nouvelle image avant de l'afficher
+      const img = new window.Image();
+      img.src = images[current];
+      try {
+        if (img.decode) {
+          await img.decode();
+        } else {
+          await new Promise((resolve, reject) => {
+            img.onload = resolve;
+            img.onerror = reject;
+          });
+        }
+      } catch {
+        // on continue même si decode() échoue (ex: image déjà en cache sur certains navigateurs)
+      }
 
-  const swap = setTimeout(() => {
-    setDisplayed(current);
-    // on attend la frame suivante pour être sûr que l'image
-    // soit bien rendue avant de relancer le fade-in
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => setVisible(true));
-    });
-  }, 600);
+      if (cancelled) return;
 
-  return () => clearTimeout(swap);
-}, [current]);
+      setDisplayed(current);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (!cancelled) setVisible(true);
+        });
+      });
+    }, 600);
+
+    return () => {
+      cancelled = true;
+      clearTimeout(swap);
+    };
+  }, [current]);
 
   return (
     <div
