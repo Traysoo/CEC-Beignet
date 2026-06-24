@@ -12,7 +12,7 @@ export default function AnimatedCircle({ current }: { current: number }) {
         className="hidden md:block absolute w-[90vw] h-[90vw] max-w-[1100px] max-h-[1100px] rounded-full"
         style={{
           backgroundColor: colors[current],
-          transition: "background-color 1.2s ease",
+          transition: "background-color 1.2s linear",
           top: "max(calc(-22vw + 224px), -24px)",
           right: "max(-76vw, -927px)",
         }}
@@ -37,7 +37,7 @@ export default function AnimatedCircle({ current }: { current: number }) {
         className="block md:hidden absolute rounded-full"
         style={{
           backgroundColor: colors[current],
-          transition: "background-color 1.2s ease",
+          transition: "background-color 1.2s linear",
           width: "190px",
           height: "190px",
           top: "170px",
