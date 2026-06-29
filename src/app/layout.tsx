@@ -9,8 +9,15 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.alliancedubeignet.com"),
+
   title: "L'Irresistible Alliance du Beignet",
   description: "Rendre irrésistibles les nouveaux récits",
+
+  alternates: {
+    canonical: "/",
+  },
+
   icons: {
     icon: "/LogoIcon.png",
     apple: "/LogoIcon.png",
